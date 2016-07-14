@@ -1,0 +1,54 @@
+**Halves** is a clean, professional and beautiful template that is perfect for your startup, small business, corporation, blog and portfolio website. It has many features and options that have been custom designed with unique features. And it has a range of unique page templates to help you get started, including Portfolio, Pricing, Resume, Contact, About and more.
+
+Halves is built with HTML5, the **Twitter Bootstrap v3.3.6 framework**. It also uses the **Font Awesome** css framework (v4.6.3) & the custom built Halves CSS file using the **LESS CSS** framework.
+
+![](http://www.pukekodesigns.co.nz/clients/halves/img/halves-devices.png)
+
+##Page Templates##
+
+ - Home
+ - About
+ - Blog
+    - Parent
+    - Post
+    - Archives
+    - Categories
+ - Contact
+ - FAQs
+ - Portfolio Parent
+ - Portfolio Item
+ - Pricing
+ - Resume
+ - User Guide & Documentation
+ - Components
+    - UI Elements
+    - Form Elements
+    - Tables & Typography
+
+##Features##
+
+ - Bootstrap 3.3.6
+ - CSS3 (also uses the LESS CSS framework)
+ - HTML5
+ - Font Awesome icons 4.6.3
+ - Google Web Fonts (PT Sans and Lato)
+ - Fully responsive for all devices and screen sizes
+ - Isotope grid layout for Portfolio
+ - Documentation and user guide
+ - User friendly code
+ - Friendly and helpful support
+
+
+## Attribution and Credits ##
+
+ - Icons: Font Awesome by Dave Gandy - http://fortawesome.github.io/Font-Awesome/
+ - Fonts: Google Web Fonts - Merriweather and Raleway - http://www.google.com/fonts/
+ - Isotope - http://isotope.metafizzy.co/
+ - jQuery cycle 2 - http://jquery.malsup.com/cycle2/
+ - Text and Photos:
+    -  Pukeko Design Studio | http://www.pukekodesigns.co.nz
+    -  Unsplash | https://unsplash.com
+    -  MorgueFile | http://www.morguefile.com
+    -  Simon Bouchard | http://www.flickr.com/photos/simon-bouchard/4924194652/sizes/m/in/set-72157624798241210/
+    -  500px | http://www.500px.com
+    -  Steven Stevenson Resume - © copyright 2009, Kat Neville | safetygoat | http://www.misterstevenson.com/contest.html
