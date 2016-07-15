@@ -2394,8 +2394,8 @@ h2.module-title {
   overflow: hidden;
   text-align: center;
   background-color: #000;
-  background-image: url(../img/sample/desk-top-view.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35)), url(../img/sample/desk-top-view.jpg
+  background-image: url(../img/bellevue_ranch.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35), url(../img/bellevue_ranch.png)
   );
   background-position: center top;
   background-repeat: no-repeat;
@@ -2404,13 +2404,24 @@ h2.module-title {
   -webkit-background-size: cover;
   background-size: cover;
   background-attachment: fixed;
-  color: #fff;
+  color: #FFF;
+  font-weight: bold;
+
 }
 .wrapper-hero h1 {
   margin-top: 0;
-  font-size: 38px;
+  font-size: 48px;
   display: inline-block;
-  color: #fff;
+  font-weight: 900;
+  color: #003057;
+   -webkit-text-stroke: 1px #FFBD17;
+   color: #003057;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
 }
 .wrapper-hero .module-subtitle {
   font-size: 22px;
