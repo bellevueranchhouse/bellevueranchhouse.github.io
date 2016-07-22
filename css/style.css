@@ -3498,6 +3498,15 @@ pre {
 /*
   SUB FOOTER
 */
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
 .wrapper-sub-footer {
   padding-top: 120px;
   background: #c3d2d8;
