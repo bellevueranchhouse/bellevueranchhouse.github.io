@@ -2397,7 +2397,7 @@ h2.module-title {
   background-image: url(../img/testv.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35), url(../img/testv.jpg)
   );
-  background-position: center top;
+  background-position: center;
   background-repeat: no-repeat;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2406,6 +2406,7 @@ h2.module-title {
   background-attachment: fixed;
   color: #FFF;
   font-weight: bold;
+
 
 }
 .wrapper-hero h1 {
@@ -2441,9 +2442,13 @@ h2.module-title {
 }
 @media (max-width: 767px) {
   .wrapper-hero {
-    padding: 80px 0;
-    height: auto;
-    background-attachment: inherit;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+  padding-top: 100px;
+
   }
   .wrapper-hero .centralise {
     margin-top: 0 !important;
@@ -3503,6 +3508,7 @@ pre {
   min-height: 100%;
   height: auto !important;
   height: 100%;
+  padding: 50px;
   /* Negative indent footer by it's height */
   margin: 0 auto -60px;
 }
