@@ -2394,8 +2394,8 @@ h2.module-title {
   overflow: hidden;
   text-align: center;
   background-color: #000;
-  background-image: url(../img/bellevue_ranch.png);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35), url(../img/bellevue_ranch.png)
+  background-image: url(../img/testv.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35), url(../img/testv.jpg)
   );
   background-position: center top;
   background-repeat: no-repeat;
