@@ -303,11 +303,43 @@
         </div>
     </footer>
 
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+        <button id="close-modal" class="absolute top-5 right-5 text-white text-3xl font-bold focus:outline-none">&times;</button>
+        <img id="modal-img" src="" alt="Expanded photo" class="max-h-[90vh] max-w-[90vw] rounded shadow-lg">
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
+            // Mobile menu toggle
             $('#mobile-menu-button').click(function() {
                 $('#mobile-menu').toggleClass('hidden');
+            });
+
+            // Click-to-enlarge for gallery images
+            $('.portfolio-item img')
+                .addClass('cursor-zoom-in')
+                .on('click', function () {
+                    const src = $(this).attr('src');
+                    $('#modal-img').attr('src', src);
+                    $('#image-modal').removeClass('hidden');
+                });
+
+            // Close modal when clicking outside the image or on the × button
+            $('#close-modal, #image-modal').on('click', function (e) {
+                if (e.target.id === 'image-modal' || e.target.id === 'close-modal') {
+                    $('#image-modal').addClass('hidden');
+                    $('#modal-img').attr('src', '');
+                }
+            });
+
+            // Close modal with ESC key
+            $(document).on('keyup', function (e) {
+                if (e.key === 'Escape') {
+                    $('#image-modal').addClass('hidden');
+                    $('#modal-img').attr('src', '');
+                }
             });
         });
     </script>
