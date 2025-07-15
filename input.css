@@ -20,7 +20,11 @@
 }
 
 .nav-link {
-    @apply text-white hover:text-blue-300 transition duration-300;
+    @apply text-white font-bold text-lg hover:text-blue-300 transition duration-300;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+}
+body {
+    font-family: 'Inter', sans-serif;
 }
 
 .accordion-item {

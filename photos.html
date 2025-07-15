@@ -10,6 +10,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Simple favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
@@ -54,6 +55,7 @@
 </head>
 
 <body class="flex flex-col min-h-screen">
+    body { font-family: 'Inter', sans-serif; }
 
     <header class="bg-gray-800 text-white p-4 sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center">
@@ -62,22 +64,22 @@
                 Bellevue Ranch House
             </a>
             <div class="hidden md:flex space-x-4">
-                <a href="about.html" class="text-white hover:text-blue-300">About</a>
-                <a href="photos.html" class="text-blue-300 hover:text-blue-400 font-bold">Photos</a>
-                <a href="pricing.html" class="text-white hover:text-blue-300">Pricing</a>
-                <a href="contact.html" class="text-white hover:text-blue-300">Contact</a>
-                <a href="faqs.html" class="text-white hover:text-blue-300">FAQs</a>
+                <a href="about.html" class="text-white font-bold text-lg hover:text-blue-300">About</a>
+                <a href="photos.html" class="text-white font-bold text-lg hover:text-blue-300">Photos</a>
+                <a href="pricing.html" class="text-white font-bold text-lg hover:text-blue-300">Pricing</a>
+                <a href="contact.html" class="text-white font-bold text-lg hover:text-blue-300">Contact</a>
+                <a href="faqs.html" class="text-white font-bold text-lg hover:text-blue-300">FAQs</a>
             </div>
             <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
                 <i class="fa fa-bars text-2xl"></i>
             </button>
         </nav>
         <div class="hidden md:hidden mt-4" id="mobile-menu">
-            <a href="about.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">About</a>
-            <a href="photos.html" class="block py-2 px-4 text-sm text-blue-300 bg-gray-700">Photos</a>
-            <a href="pricing.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Pricing</a>
-            <a href="contact.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Contact</a>
-            <a href="faqs.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">FAQs</a>
+            <a href="about.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">About</a>
+            <a href="photos.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">Photos</a>
+            <a href="pricing.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">Pricing</a>
+            <a href="contact.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">Contact</a>
+            <a href="faqs.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">FAQs</a>
         </div>
     </header>
 
@@ -271,6 +273,17 @@
                         </div>
                     </div>
                     
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative h-64">
+                            <video controls class="w-full h-full object-cover">
+                                <source src="img/cm-chat-media-video-1_cba9c04f-a549-5245-bb03-bf4495e24705_67_0_0%202.MOV" type="video/quicktime">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">House&nbsp;Tour</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

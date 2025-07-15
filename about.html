@@ -9,6 +9,7 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Simple favicon -->
@@ -28,6 +29,7 @@
     </script>
     
     <style>
+        body { font-family: 'Inter', sans-serif; }
         .btn-primary {
             @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300;
         }
@@ -52,22 +54,22 @@
                 Bellevue Ranch House
             </a>
             <div class="hidden md:flex space-x-4">
-                <a href="about.html" class="text-blue-300 hover:text-blue-400 font-bold">About</a>
-                <a href="photos.html" class="text-white hover:text-blue-300">Photos</a>
-                <a href="pricing.html" class="text-white hover:text-blue-300">Pricing</a>
-                <a href="contact.html" class="text-white hover:text-blue-300">Contact</a>
-                <a href="faqs.html" class="text-white hover:text-blue-300">FAQs</a>
+                <a href="about.html" class="text-white font-bold text-lg hover:text-blue-300">About</a>
+                <a href="photos.html" class="text-white font-bold text-lg hover:text-blue-300">Photos</a>
+                <a href="pricing.html" class="text-white font-bold text-lg hover:text-blue-300">Pricing</a>
+                <a href="contact.html" class="text-white font-bold text-lg hover:text-blue-300">Contact</a>
+                <a href="faqs.html" class="text-white font-bold text-lg hover:text-blue-300">FAQs</a>
             </div>
             <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
                 <i class="fa fa-bars text-2xl"></i>
             </button>
         </nav>
         <div class="hidden md:hidden mt-4" id="mobile-menu">
-            <a href="about.html" class="block py-2 px-4 text-sm text-blue-300 bg-gray-700">About</a>
-            <a href="photos.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Photos</a>
-            <a href="pricing.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Pricing</a>
-            <a href="contact.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Contact</a>
-            <a href="faqs.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">FAQs</a>
+            <a href="about.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">About</a>
+            <a href="photos.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">Photos</a>
+            <a href="pricing.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">Pricing</a>
+            <a href="contact.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">Contact</a>
+            <a href="faqs.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">FAQs</a>
         </div>
     </header>
 
