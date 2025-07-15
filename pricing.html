@@ -1,218 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" class="h-full bg-gray-100">
+<head>
     <meta charset="utf-8">
-    <title>Pricing</title>
+    <title>Pricing - Bellevue Ranch House</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Pricing and room options at Bellevue Ranch House for UC Merced students.">
     <meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <!--[if IE 7]>
-      <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="img/sample/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/sample/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/sample/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/sample/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/sample/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/sample/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/sample/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/sample/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/sample/favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/sample/favicon/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="img/sample/favicon/manifest.json">
-    <link rel="mask-icon" href="img/sample/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="../img/sample/favicon/mstile-144x144.png">
-    <meta name="theme-color" content="#4e6c75">
+    <!-- Simple favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
     
-  </head>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3b82f6',
+                        'secondary': '#6b7280'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .btn-primary {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+        }
+        .btn-secondary {
+            @apply bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+        }
+        .card {
+            @apply bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg;
+        }
+        .nav-link {
+            @apply text-blue-600 hover:text-blue-800 transition duration-300;
+        }
+    </style>
+</head>
 
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-          <a href="#none" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="fa fa-bars"></span><span class="btn-navbar-text">Menu</span>
-          </a>
-          <a class="navbar-brand" href="./index.html"><span class="logo"></span> Bellevue Ranch House</a>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="about.html">About</a></li>
-              <li><a href="photos.html">Photos</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="faqs.html">FAQs</a></li>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-gray-800 text-white p-4 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="./index.html" class="text-white text-2xl font-bold flex items-center">
+                <img src="img/bellevue_ranch.png" alt="Logo" class="h-8 w-8 mr-2 rounded-full">
+                Bellevue Ranch House
+            </a>
+            <div class="hidden md:flex space-x-4">
+                <a href="about.html" class="text-white hover:text-blue-300">About</a>
+                <a href="photos.html" class="text-white hover:text-blue-300">Photos</a>
+                <a href="pricing.html" class="text-blue-300 hover:text-blue-400 font-bold">Pricing</a>
+                <a href="contact.html" class="text-white hover:text-blue-300">Contact</a>
+                <a href="faqs.html" class="text-white hover:text-blue-300">FAQs</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <i class="fa fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <div class="hidden md:hidden mt-4" id="mobile-menu">
+            <a href="about.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">About</a>
+            <a href="photos.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Photos</a>
+            <a href="pricing.html" class="block py-2 px-4 text-sm text-blue-300 bg-gray-700">Pricing</a>
+            <a href="contact.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Contact</a>
+            <a href="faqs.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">FAQs</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Rooms & Pricing</h1>
+                    <p class="text-xl text-gray-600 mt-4">Transparent pricing for your new home.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Regular Bedroom -->
+                    <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col text-center border-t-4 border-blue-500">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Regular Bedroom</h3>
+                        <p class="text-gray-500 mb-4">4 Available</p>
+                        <div class="text-5xl font-extrabold text-gray-900 mb-4">$500<span class="text-lg font-medium text-gray-500">/mo</span></div>
+                        <p class="text-gray-600 mb-6">+ utilities</p>
+                        <ul class="text-left space-y-3 text-gray-700 mb-8 flex-grow">
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>Spacious Closet</span></li>
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>Shared Bathroom</span></li>
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>In-house Washer & Dryer</span></li>
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>Full Kitchen Access</span></li>
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>1-Year Lease</span></li>
+                        </ul>
+                        <a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry, Regular Room" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg w-full transition duration-300">Inquire Now</a>
+                    </div>
+
+                    <!-- Master Bedroom -->
+                    <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col text-center border-t-4 border-purple-500 transform scale-105">
+                        <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                            <span class="bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Master Bedroom</h3>
+                        <p class="text-gray-500 mb-4">2 Available, Single Occupancy</p>
+                        <div class="text-5xl font-extrabold text-gray-900 mb-4">$800<span class="text-lg font-medium text-gray-500">/mo</span></div>
+                        <p class="text-gray-600 mb-6">+ utilities</p>
+                        <ul class="text-left space-y-3 text-gray-700 mb-8 flex-grow">
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>Large Walk-in Closet</span></li>
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>Private Bathroom</span></li>
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>In-house Washer & Dryer</span></li>
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>Full Kitchen Access</span></li>
+                            <li class="flex items-center"><i class="fa fa-check-circle text-green-500 mr-3"></i><span>1-Year Lease</span></li>
+                        </ul>
+                        <a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry, Master Room" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg w-full transition duration-300">Inquire Now</a>
+                    </div>
+
+                    <!-- Utilities -->
+                    <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col text-center border-t-4 border-teal-500">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Utilities</h3>
+                        <p class="text-gray-500 mb-4">Shared Equally Among Tenants</p>
+                        <div class="text-5xl font-extrabold text-gray-900 mb-4">~$60<span class="text-lg font-medium text-gray-500">/mo</span></div>
+                        <p class="text-gray-600 mb-6">Estimated cost</p>
+                        <ul class="text-left space-y-3 text-gray-700 mb-8 flex-grow">
+                            <li class="flex items-center"><i class="fa fa-wifi text-teal-500 mr-3"></i><span>Comcast Internet</span></li>
+                            <li class="flex items-center"><i class="fa fa-fire text-teal-500 mr-3"></i><span>PG&E (Gas)</span></li>
+                            <li class="flex items-center"><i class="fa fa-lightbulb-o text-teal-500 mr-3"></i><span>MID (Electric)</span></li>
+                            <li class="flex items-center"><i class="fa fa-tint text-teal-500 mr-3"></i><span>City of Merced (Water & Garbage)</span></li>
+                        </ul>
+                        <a href="contact.html" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-6 rounded-lg w-full transition duration-300">Contact for Details</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <ul class="flex justify-center space-x-6 mb-4">
+                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                <li><a href="about.html" class="hover:text-blue-300">About</a></li>
+                <li><a href="photos.html" class="hover:text-blue-300">Photos</a></li>
+                <li><a href="pricing.html" class="hover:text-blue-300">Pricing</a></li>
+                <li><a href="contact.html" class="hover:text-blue-300">Contact</a></li>
+                <li><a href="faqs.html" class="hover:text-blue-300">FAQs</a></li>
             </ul>
-          </div><!-- end navbar-collapse -->
-        </div><!-- end container -->
-      </div><!-- end navbar-inner -->
-    </div><!-- end navbar -->
-    
-    <section class="wrapper wrapper-light wrapper-pricing">
-      <div class="container">
-        <h2 class="module-title">Rent cost and estimated utilities</h2>
-        <div class="space-50"></div>
-        <div class="row">
-          <div class="col-md-12 center">
-            <div class="price-table prices-3">
-              <div class="price-column popular">
-                <div class="heading">
-                  <span class="label-popular">Regular Bedroom</span>
-                  <p><span class="sign">$</span> <span class="price">500</span> <small>/ month +utilities</small></p>
-                  <h3>4 Available</h3>
-                </div>
-                <ul>
-                  <li><a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry, Regular Room" class="btn btn-success">Inquire about this room <i class="fa fa-paper-plane-o" aria-hidden="true"></i></a></li>
-                  <li>closet</li>
-                  <li>shared bathroom</li>
-                  <li>washer & dryer</li>
-                  <li>shared use of kitchen</li>
-                  <li>1 year contract</li>
-                </ul>
-              </div><!-- end price-column -->
-              <div class="price-column popular">
-                <div class="heading">
-                  <span class="label-popular">Master Bedroom</span>
-                  <p><span class="sign">$</span> <span class="price">800</span> <small>/ month +utilities</small></p>
-                  <h3>2 Master Bedrooms Available, Single Occupancy</h3>
-                </div>
-                <ul>
-                  <li><a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry, Master Room" class="btn btn-success">Inquire about this room <i class="fa fa-paper-plane-o" aria-hidden="true"></i></a></li>
-                  <li>large walk-in closet</li>
-                  <li>private bathroom</li>
-                  <li>washer & dryer</li>
-                  <li>shared use of kitchen</li>
-                  <li>1 year contract</li>
-                </ul>
-              </div><!-- end price-column -->
-              <div class="price-column popular">
-                <div class="heading">
-                  <span class="label-popular">Utilities</span>
-                  <p><span class="sign">~$</span> <span class="price">60</span> <small>/ month</small></p>
-                  <h3>Estimated, Shared Equally Among Tenants</h3>
-                </div>
-                <ul>
-                  <li>Comcast Internet</li>
-                  <li>PG&E (Gas)</li>
-                  <li>MID (Electric)</li>
-                  <li>City of Merced (Water & Garbage)</li>
-                </ul>
-              </div><!-- end price-column -->
-
-            </div><!-- end price-table -->
-          </div><!-- end col -->
-        </div><!-- end row -->
-        <div class="space-50"></div>
-        
-      </div><!-- end container -->
-    </section><!-- end wrapper -->
-    
-    
-      
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-
-            <ul class="list-inline">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="photos.html">Photos</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry" title="Inquire about renting" data-rel="tooltip" data-toggle="tooltip">Contact <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-            </a></li>
-            </ul>
-
-          </div><!-- end col -->
-        </div><!-- end row fluid -->
-      </div><!-- end container -->
+            <p>&copy; 2024 Bellevue Ranch House. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/halves.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        /* Portfolio Isotope */
-        var $container = $('.portfolio-items');
-              
-        $container.imagesLoaded( function(){
-          $container.isotope({
-            itemSelector : '.portfolio-item',
-            layoutMode : 'fitRows'
-          });
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#mobile-menu-button').click(function() {
+                $('#mobile-menu').toggleClass('hidden');
+            });
         });
-        
-        // Needed functions
-        var getColWidth = function() {
-          var width,
-          windowWidth = $(window).width();
-          if( windowWidth <= 480 ) {
-            width = Math.floor( $container.width() );
-          } else if( windowWidth <= 768 ) {
-            width = Math.floor( $container.width() );
-          } else {
-            width = Math.floor( $container.width() / 3 - 20 );
-          }
-          return width;
-        }
-      
-        function setWidths() {
-          var colWidth = getColWidth();
-          $container.children().css({ width: colWidth });
-        }
-              
-        setWidths();
-      
-        $(window).smartresize(function() {
-          setWidths();
-          $container.isotope({
-            masonry: {
-              columnWidth: getColWidth()
-            }
-          });
-        });
-        
-        $('.filter-portfolio li a').click(function(){
-          $('.filter-portfolio li.active').removeClass('active');
-          $(this).parent('li').addClass('active');
-          var selector = $(this).attr('data-filter');
-          $container.isotope({
-            filter: selector,
-            masonry: { columnWidth: $container.width() / 3 - 20 }
-          });
-          return false;
-        });
-        // update columnWidth on window resize
-        $(window).smartresize(function(){
-          $container.isotope({
-            // update columnWidth to a percentage of container width
-            masonry: { columnWidth: $container.width() / 3 - 20 }
-          });
-        });
-      });
     </script>
 
-  </body>
+</body>
 </html>

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.hero-overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+}
+
+.btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+}
+
+.card {
+    @apply bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg;
+}
+
+.nav-link {
+    @apply text-white hover:text-blue-300 transition duration-300;
+}
+
+.accordion-item {
+    @apply border-b border-gray-200;
+}
+
+.accordion-button {
+    @apply w-full text-left p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-300;
+}
+
+.accordion-content {
+    @apply p-4 bg-white;
+} 

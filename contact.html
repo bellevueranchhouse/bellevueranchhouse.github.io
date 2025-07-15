@@ -1,175 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" class="h-full bg-gray-100">
+<head>
     <meta charset="utf-8">
-    <title>Contact</title>
+    <title>Contact - Bellevue Ranch House</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Contact us for rental inquiries or download application forms.">
     <meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <!--[if IE 7]>
-      <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="img/sample/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/sample/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/sample/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/sample/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/sample/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/sample/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/sample/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/sample/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/sample/favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/sample/favicon/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="img/sample/favicon/manifest.json">
-    <link rel="mask-icon" href="img/sample/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="../img/sample/favicon/mstile-144x144.png">
-    <meta name="theme-color" content="#4e6c75">
+    <!-- Simple favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
     
-  </head>
-
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-          <a href="#none" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="fa fa-bars"></span><span class="btn-navbar-text">Menu</span>
-          </a>
-          <a class="navbar-brand" href="./index.html"><span class="logo"></span> Bellevue Ranch House</a>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="about.html">About</a></li>
-              <li><a href="photos.html">Photos</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="faqs.html">FAQs</a></li>
-            </ul>
-              </li>
-            </ul>
-          </div><!-- end navbar-collapse -->
-        </div><!-- end container -->
-      </div><!-- end navbar-inner -->
-    </div><!-- end navbar -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3b82f6',
+                        'secondary': '#6b7280'
+                    }
+                }
+            }
+        }
+    </script>
     
+    <style>
+        .btn-primary {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+        }
+        .btn-secondary {
+            @apply bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+        }
+        .card {
+            @apply bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg;
+        }
+        .nav-link {
+            @apply text-blue-600 hover:text-blue-800 transition duration-300;
+        }
+    </style>
+</head>
 
-  
-    <div id="wrap">
-    <section class="wrapper wrapper-signup">
-      <div class="container text-center">
+<body class="flex flex-col min-h-screen">
 
-              <a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry" class="btn btn-lg btn-primary">Contact <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-              </a>
-              <a href="docs/rental_application_v2.pdf" class="btn btn-lg btn-primary">Rental Application <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-              </a>
-              <a href="docs/move_checklist.pdf" class="btn btn-lg btn-primary">Move In/Out Checklist <i class="fa fa-check-square-o" aria-hidden="true"></i>
-              </a>
+    <header class="bg-gray-800 text-white p-4 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="./index.html" class="text-white text-2xl font-bold flex items-center">
+                <img src="img/bellevue_ranch.png" alt="Logo" class="h-8 w-8 mr-2 rounded-full">
+                Bellevue Ranch House
+            </a>
+            <div class="hidden md:flex space-x-4">
+                <a href="about.html" class="text-white hover:text-blue-300">About</a>
+                <a href="photos.html" class="text-white hover:text-blue-300">Photos</a>
+                <a href="pricing.html" class="text-white hover:text-blue-300">Pricing</a>
+                <a href="contact.html" class="text-blue-300 hover:text-blue-400 font-bold">Contact</a>
+                <a href="faqs.html" class="text-white hover:text-blue-300">FAQs</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <i class="fa fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <div class="hidden md:hidden mt-4" id="mobile-menu">
+            <a href="about.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">About</a>
+            <a href="photos.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Photos</a>
+            <a href="pricing.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Pricing</a>
+            <a href="contact.html" class="block py-2 px-4 text-sm text-blue-300 bg-gray-700">Contact</a>
+            <a href="faqs.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">FAQs</a>
+        </div>
+    </header>
 
-      </div><!-- end container -->
-    </section><!-- end wrapper -->
-    </div>
+    <main class="flex-grow">
+        <section class="py-20 text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Get In Touch</h1>
+                <p class="text-xl text-gray-600 mt-4 mb-12">Have questions or ready to apply? Here's how you can reach us.</p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                    <a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300 flex items-center w-full md:w-auto justify-center">
+                        <i class="fa fa-paper-plane-o mr-3"></i> Contact via Email
+                    </a>
+                    <a href="docs/rental_application_v2.pdf" class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300 flex items-center w-full md:w-auto justify-center">
+                        <i class="fa fa-pencil-square-o mr-3"></i> Rental Application
+                    </a>
+                    <a href="docs/move_checklist.pdf" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300 flex items-center w-full md:w-auto justify-center">
+                        <i class="fa fa-check-square-o mr-3"></i> Move In/Out Checklist
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-
-            <ul class="list-inline">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="photos.html">Photos</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry" title="Inquire about renting" data-rel="tooltip" data-toggle="tooltip">Contact <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-            </a></li>            </ul>
-
-          </div><!-- end col -->
-        </div><!-- end row fluid -->
-      </div><!-- end container -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <ul class="flex justify-center space-x-6 mb-4">
+                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                <li><a href="about.html" class="hover:text-blue-300">About</a></li>
+                <li><a href="photos.html" class="hover:text-blue-300">Photos</a></li>
+                <li><a href="pricing.html" class="hover:text-blue-300">Pricing</a></li>
+                <li><a href="contact.html" class="hover:text-blue-300">Contact</a></li>
+                <li><a href="faqs.html" class="hover:text-blue-300">FAQs</a></li>
+            </ul>
+            <p>&copy; 2024 Bellevue Ranch House. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/halves.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        /* Portfolio Isotope */
-        var $container = $('.portfolio-items');
-              
-        $container.imagesLoaded( function(){
-          $container.isotope({
-            itemSelector : '.portfolio-item',
-            layoutMode : 'fitRows'
-          });
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#mobile-menu-button').click(function() {
+                $('#mobile-menu').toggleClass('hidden');
+            });
         });
-        
-        // Needed functions
-        var getColWidth = function() {
-          var width,
-          windowWidth = $(window).width();
-          if( windowWidth <= 480 ) {
-            width = Math.floor( $container.width() );
-          } else if( windowWidth <= 768 ) {
-            width = Math.floor( $container.width() );
-          } else {
-            width = Math.floor( $container.width() / 3 - 20 );
-          }
-          return width;
-        }
-      
-        function setWidths() {
-          var colWidth = getColWidth();
-          $container.children().css({ width: colWidth });
-        }
-              
-        setWidths();
-      
-        $(window).smartresize(function() {
-          setWidths();
-          $container.isotope({
-            masonry: {
-              columnWidth: getColWidth()
-            }
-          });
-        });
-        
-        $('.filter-portfolio li a').click(function(){
-          $('.filter-portfolio li.active').removeClass('active');
-          $(this).parent('li').addClass('active');
-          var selector = $(this).attr('data-filter');
-          $container.isotope({
-            filter: selector,
-            masonry: { columnWidth: $container.width() / 3 - 20 }
-          });
-          return false;
-        });
-        // update columnWidth on window resize
-        $(window).smartresize(function(){
-          $container.isotope({
-            // update columnWidth to a percentage of container width
-            masonry: { columnWidth: $container.width() / 3 - 20 }
-          });
-        });
-      });
     </script>
 
-  </body>
+</body>
 </html>

@@ -1,372 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" class="h-full bg-gray-100">
+<head>
     <meta charset="utf-8">
-    <title>Photos</title>
+    <title>Photos - Bellevue Ranch House</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Photos of the Bellevue Ranch House, a home for UC Merced students.">
     <meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <!--[if IE 7]>
-      <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="img/sample/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/sample/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/sample/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/sample/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/sample/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/sample/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/sample/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/sample/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/sample/favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/sample/favicon/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="img/sample/favicon/manifest.json">
-    <link rel="mask-icon" href="img/sample/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="../img/sample/favicon/mstile-144x144.png">
-    <meta name="theme-color" content="#4e6c75">
+    <!-- Simple favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
     
-  </head>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3b82f6',
+                        'secondary': '#6b7280'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .btn-primary {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+        }
+        .btn-secondary {
+            @apply bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+        }
+        .card {
+            @apply bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg;
+        }
+        .nav-link {
+            @apply text-blue-600 hover:text-blue-800 transition duration-300;
+        }
+    </style>
 
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-          <a href="#none" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="fa fa-bars"></span><span class="btn-navbar-text">Menu</span>
-          </a>
-          <a class="navbar-brand" href="./index.html"><span class="logo"></span> Bellevue Ranch House</a>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="about.html">About</a></li>
-              <li><a href="photos.html">Photos</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="faqs.html">FAQs</a></li>
+    <style>
+        .portfolio-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-gray-800 text-white p-4 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="./index.html" class="text-white text-2xl font-bold flex items-center">
+                <img src="img/bellevue_ranch.png" alt="Logo" class="h-8 w-8 mr-2 rounded-full">
+                Bellevue Ranch House
+            </a>
+            <div class="hidden md:flex space-x-4">
+                <a href="about.html" class="text-white hover:text-blue-300">About</a>
+                <a href="photos.html" class="text-blue-300 hover:text-blue-400 font-bold">Photos</a>
+                <a href="pricing.html" class="text-white hover:text-blue-300">Pricing</a>
+                <a href="contact.html" class="text-white hover:text-blue-300">Contact</a>
+                <a href="faqs.html" class="text-white hover:text-blue-300">FAQs</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <i class="fa fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <div class="hidden md:hidden mt-4" id="mobile-menu">
+            <a href="about.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">About</a>
+            <a href="photos.html" class="block py-2 px-4 text-sm text-blue-300 bg-gray-700">Photos</a>
+            <a href="pricing.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Pricing</a>
+            <a href="contact.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Contact</a>
+            <a href="faqs.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">FAQs</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Home Photos</h1>
+                    <p class="text-xl text-gray-600 mt-4">A glimpse into your future home.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                            <img src="img/house/01_frontlivingroom.jpg" alt="Front Living Room" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Front Living Room</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                            <img src="img/house/1_roombyfrontdoor.jpeg" alt="Front Spare Room" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Front Spare Room</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                            <img src="img/house/2_frominsideroombyfrontdoor.jpg" alt="Front Spare Room" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Front Spare Room</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                            <img src="img/house/3_kitchenfromlivingroom.jpg" alt="Kitchen" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Kitchen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                            <img src="img/house/4_kitchenpantry.jpg" alt="Kitchen Pantry" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Kitchen Pantry</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                            <img src="img/house/5_kitchendishwasher.jpg" alt="Kitchen Dishwasher" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Kitchen Dishwasher</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/6_fromlivingroom_laundry_upstairs.jpg" alt="Laundry Room" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Laundry &amp; Stairs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/7_MSbedroomL1.jpg" alt="Master Bedroom" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Master Bedroom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/8_MSbedroomL1_bathroom.JPG" alt="Master Bathroom" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Master Bathroom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/8_MSbedroomL1_bathroom1.jpg" alt="Master Bathroom Sinks" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Master Bathroom Sinks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/9_MSbedroomL1_bathroom2.jpg" alt="Master Bathroom Tub" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Master Bathroom Tub</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/10_MSbedroomL1_bathroom3.jpg" alt="Master Bathroom Shower" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Master Bathroom Shower</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/11_MSbedroomL1_closet.jpg" alt="Master Bedroom Closet" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Master Bedroom Closet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/12_bedroom1and2_L2.jpg" alt="Upstairs Bedroom" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Upstairs Bedroom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/13_bedroom1and_L2_closet.jpg" alt="Upstairs Bedroom Closet" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Upstairs Bedroom Closet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/14_sharedBath_L2_1.jpg" alt="Shared Bathroom" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Shared Bathroom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/15_sharedBath_L2_2.jpg" alt="Shared Bathroom" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Shared Bathroom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/16_bedroom3_L2.jpg" alt="Upstairs Bedroom" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Upstairs Bedroom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/17_bedroom3_L2_closet.jpg" alt="Upstairs Bedroom Closet" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Upstairs Bedroom Closet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
+                        <div class="relative">
+                             <img src="img/house/18_backyard1.jpg" alt="Backyard" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-lg font-bold">Backyard</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <ul class="flex justify-center space-x-6 mb-4">
+                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                <li><a href="about.html" class="hover:text-blue-300">About</a></li>
+                <li><a href="photos.html" class="hover:text-blue-300">Photos</a></li>
+                <li><a href="pricing.html" class="hover:text-blue-300">Pricing</a></li>
+                <li><a href="contact.html" class="hover:text-blue-300">Contact</a></li>
+                <li><a href="faqs.html" class="hover:text-blue-300">FAQs</a></li>
             </ul>
-          </div><!-- end navbar-collapse -->
-        </div><!-- end container -->
-      </div><!-- end navbar-inner -->
-    </div><!-- end navbar -->
-
-
-
-
-
-    <section class="wrapper wrapper-portfolio">
-      <div class="container">
-        <h1 class="module-title">Home Photos</h1>
-
-        <div class="portfolio-items">
-          <div class="portfolio-item art">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art">Front Living Room</span>
-               <img src="img/house/01_frontlivingroom.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Front Living Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art graphic-design">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art tag-graphic">Outside View</span>
-               <img src="img/house/1_roombyfrontdoor.jpeg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-                <h3> Front Spare Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item photography">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-photography">Inside View</span>
-               <img src="img/house/2_frominsideroombyfrontdoor.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-                <h3>Front Spare Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-
-
-
-          <div class="portfolio-item art">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art">View from Living Room</span>
-               <img src="img/house/3_kitchenfromlivingroom.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Kitchen</h3>
-              <p>Refrigerator not shown</p>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art graphic-design">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art tag-graphic">Pantry</span>
-               <img src="img/house/4_kitchenpantry.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-                <h3>Kitchen</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item photography">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-photography">Dishwasher</span>
-               <img src="img/house/5_kitchendishwasher.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-                <h3>Kitchen</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-
-
-
-          <div class="portfolio-item art">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art">Laundry Room</span>
-               <img src="img/house/6_fromlivingroom_laundry_upstairs.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Laundry Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art graphic-design">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art tag-graphic">Entrance</span>
-               <img src="img/house/7_MSbedroomL1.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-                <h3>Master Bedroom</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item photography">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-photography">Bathroom</span>
-               <img src="img/house/8_MSbedroomL1_bathroom.JPG" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-                <h3>Master Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-
-
-
-          <div class="portfolio-item web-design graphic-design">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-web tag-graphic">Sinks</span>
-               <img src="img/house/8_MSbedroomL1_bathroom1.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3> Master Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art photography">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art tag-photography">Bathtub</span>
-               <img src="img/house/9_MSbedroomL1_bathroom2.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Master Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art">Shower</span>
-               <img src="img/house/10_MSbedroomL1_bathroom3.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Master Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art">Walk-In Closet</span>
-               <img src="img/house/11_MSbedroomL1_closet.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Master Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art graphic-design">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art tag-graphic">Upstairs Room</span>
-               <img src="img/house/12_bedroom1and2_L2.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Regular Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item photography">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-photography">Upstairs Room Closet</span>
-               <img src="img/house/13_bedroom1and_L2_closet.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Regular Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item web-design graphic-design">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-web tag-graphic">Sinks</span>
-               <img src="img/house/14_sharedBath_L2_1.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Shared Bathroom</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art photography">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art tag-photography">Shower</span>
-               <img src="img/house/15_sharedBath_L2_2.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3> Shared Bathroom</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art">Upstairs</span>
-               <img src="img/house/16_bedroom3_L2.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Regular Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-
-
-
-
-
-          <div class="portfolio-item web-design graphic-design">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-web tag-graphic">Closet</span>
-               <img src="img/house/17_bedroom3_L2_closet.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Regular Room</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          <div class="portfolio-item art photography">
-            <div class="portfolio-thumb">
-              <span class="portfolio-tag tag-art tag-photography">Backyard</span>
-               <img src="img/house/18_backyard1.jpg" alt="" /></a>
-            </div><!-- end portfolio thumb -->
-            <div class="portfolio-body">
-              <h3>Backyard</h3>
-            </div><!-- end portfolio body -->
-          </div><!-- end portfolio item -->
-          
-
-
-
-
-
-
-        </div><!-- end portfolio-items -->
-      </div><!-- end container -->
-    </section><!-- end wrapper -->
-  
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-
-            <ul class="list-inline">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="photos.html">Photos</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry" title="Inquire about renting" data-rel="tooltip" data-toggle="tooltip">Contact <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-            </a></li>
-            </ul>
-
-          </div><!-- end col -->
-        </div><!-- end row fluid -->
-      </div><!-- end container -->
+            <p>&copy; 2024 Bellevue Ranch House. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/halves.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        /* Portfolio Isotope */
-        var $container = $('.portfolio-items');
-              
-        $container.imagesLoaded( function(){
-          $container.isotope({
-            itemSelector : '.portfolio-item',
-            layoutMode : 'fitRows'
-          });
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#mobile-menu-button').click(function() {
+                $('#mobile-menu').toggleClass('hidden');
+            });
         });
-        
-        // Needed functions
-        var getColWidth = function() {
-          var width,
-          windowWidth = $(window).width();
-          if( windowWidth <= 480 ) {
-            width = Math.floor( $container.width() );
-          } else if( windowWidth <= 768 ) {
-            width = Math.floor( $container.width() );
-          } else {
-            width = Math.floor( $container.width() / 3 - 20 );
-          }
-          return width;
-        }
-      
-        function setWidths() {
-          var colWidth = getColWidth();
-          $container.children().css({ width: colWidth });
-        }
-              
-        setWidths();
-      
-        $(window).smartresize(function() {
-          setWidths();
-          $container.isotope({
-            masonry: {
-              columnWidth: getColWidth()
-            }
-          });
-        });
-        
-        $('.filter-portfolio li a').click(function(){
-          $('.filter-portfolio li.active').removeClass('active');
-          $(this).parent('li').addClass('active');
-          var selector = $(this).attr('data-filter');
-          $container.isotope({
-            filter: selector,
-            masonry: { columnWidth: $container.width() / 3 - 20 }
-          });
-          return false;
-        });
-        // update columnWidth on window resize
-        $(window).smartresize(function(){
-          $container.isotope({
-            // update columnWidth to a percentage of container width
-            masonry: { columnWidth: $container.width() / 3 - 20 }
-          });
-        });
-      });
     </script>
-
-  </body>
+</body>
 </html>

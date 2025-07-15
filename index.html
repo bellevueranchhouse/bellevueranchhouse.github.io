@@ -1,109 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" class="h-full">
+<head>
     <meta charset="utf-8">
-    <title>Bellevue Ranch House</title>
+    <title>Bellevue Ranch House - Rooms for Rent in Merced, CA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="A home for UC Merced Students">
     <meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <!--[if IE 7]>
-      <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="img/sample/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/sample/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/sample/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/sample/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/sample/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/sample/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/sample/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/sample/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/sample/favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/sample/favicon/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="img/sample/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="img/sample/favicon/manifest.json">
-    <link rel="mask-icon" href="img/sample/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="../img/sample/favicon/mstile-144x144.png">
-    <meta name="theme-color" content="#4e6c75">
+    <!-- Simple favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
     
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3b82f6',
+                        'secondary': '#6b7280'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+        .btn-primary {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+        }
+        .btn-secondary {
+            @apply bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+        }
+        .card {
+            @apply bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg;
+        }
+        .nav-link {
+            @apply text-white hover:text-blue-300 transition duration-300 font-bold text-lg;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+        }
+    </style>
   </head>
 
-  <body>
+<body class="bg-gray-100 text-gray-800 h-full">
 
-    <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-          <a href="#none" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="fa fa-bars"></span><span class="btn-navbar-text">Menu</span>
-          </a>
-          <a class="navbar-brand" href="./index.html"><span class="logo"></span> Bellevue Ranch House</a>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="about.html">About</a></li>
-              <li><a href="photos.html">Photos</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="faqs.html">FAQs</a></li>
-            </ul>
-          </div><!-- end navbar-collapse -->
-        </div><!-- end container -->
-      </div><!-- end navbar-inner -->
-    </div><!-- end navbar -->
-    
-    <div id="wrap">
-<div class="logo">
-    <img src="img/bvr.JPG" />
-    <div><a href="http://bellevueranchhouse.com/about" class="btn btn-lg btn-info">House Info</a>
-            <a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry" class="btn btn-lg btn-primary">Contact <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-            </a></div>
-</div>
-</div>
+    <div class="relative bg-cover bg-center h-full" style="background-image: url('img/bvr.JPG');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 flex flex-col h-full">
+            <header class="p-4">
+                <nav class="flex justify-between items-center">
+                    <div class="flex items-center space-x-4">
+                        <img src="img/bellevue_ranch.png" alt="Logo" class="h-12 w-12 rounded-full">
+                        <span class="text-white text-2xl font-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Bellevue Ranch House</span>
+                    </div>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="index.html" class="text-white font-bold text-xl hover:text-blue-300 transition duration-300" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Home</a>
+                        <a href="about.html" class="text-white font-bold text-xl hover:text-blue-300 transition duration-300" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">About</a>
+                        <a href="photos.html" class="text-white font-bold text-xl hover:text-blue-300 transition duration-300" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Photos</a>
+                        <a href="pricing.html" class="text-white font-bold text-xl hover:text-blue-300 transition duration-300" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Pricing</a>
+                        <a href="contact.html" class="text-white font-bold text-xl hover:text-blue-300 transition duration-300" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Contact</a>
+                        <a href="faqs.html" class="text-white font-bold text-xl hover:text-blue-300 transition duration-300" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">FAQs</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-white focus:outline-none" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">
+                            <i class="fa fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </nav>
+                
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                    <a href="index.html" class="block text-white font-bold text-lg hover:text-blue-300 transition duration-300 py-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Home</a>
+                    <a href="about.html" class="block text-white font-bold text-lg hover:text-blue-300 transition duration-300 py-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">About</a>
+                    <a href="photos.html" class="block text-white font-bold text-lg hover:text-blue-300 transition duration-300 py-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Photos</a>
+                    <a href="pricing.html" class="block text-white font-bold text-lg hover:text-blue-300 transition duration-300 py-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Pricing</a>
+                    <a href="contact.html" class="block text-white font-bold text-lg hover:text-blue-300 transition duration-300 py-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">Contact</a>
+                    <a href="faqs.html" class="block text-white font-bold text-lg hover:text-blue-300 transition duration-300 py-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">FAQs</a>
+                </div>
+            </header>
 
+            <main class="flex-1 flex items-center justify-center px-4">
+                <div class="text-center text-white max-w-4xl">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome Home, Bobcats!</h1>
+                    <p class="text-xl md:text-2xl mb-8">Your ideal off-campus housing near UC Merced!</p>
+                    <div class="space-x-4">
+                        <a href="about.html" class="btn-primary inline-block">Learn More</a>
+                        <a href="contact.html" class="btn-secondary inline-block">Contact Us</a>
+                    </div>
+                </div>
+            </main>
 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
+            <footer class="p-4 text-center text-white">
+                <p>&copy; 2024 Bellevue Ranch House. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
 
-            <ul class="list-inline">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="photos.html">Photos</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry" title="Inquire about renting" data-rel="tooltip" data-toggle="tooltip">Contact <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-            </a></li>            </ul>
-
-          </div><!-- end col -->
-        </div><!-- end row fluid -->
-      </div><!-- end container -->
-    </footer>
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/halves.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-      });
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
     </script>
-
-  </body>
+</body>
 </html>
