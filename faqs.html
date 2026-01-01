@@ -1,286 +1,461 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>FAQs - Bellevue Ranch House</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Frequently asked questions about renting at Bellevue Ranch House.">
-    <meta name="author" content="">
+    <meta name="description" content="Frequently asked questions about renting at Bellevue Ranch House near UC Merced.">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- Simple favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
-    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#3b82f6',
-                        'secondary': '#6b7280'
+                        'ucm-blue': '#002856',
+                        'ucm-gold': '#F2A900',
+                        'ucm-blue-light': '#003366',
+                        'ucm-blue-dark': '#001a3d',
+                        'ucm-gold-light': '#ffbe33',
+                        'ucm-gold-dark': '#cc8800',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
-    
+
     <style>
+        html { scroll-behavior: smooth; }
+
+        .glass-nav {
+            background: rgba(0, 40, 86, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #F2A900 0%, #ffbe33 50%, #cc8800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .btn-primary {
-            @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+            background: linear-gradient(135deg, #F2A900 0%, #cc8800 100%);
+            transition: all 0.3s ease;
         }
-        .btn-secondary {
-            @apply bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px -10px rgba(242, 169, 0, 0.5);
         }
-        .card {
-            @apply bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg;
-        }
+
         .nav-link {
-            @apply text-blue-600 hover:text-blue-800 transition duration-300;
+            position: relative;
         }
-        .accordion-item {
-            @apply border-b border-gray-200;
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #F2A900, #cc8800);
+            transition: width 0.3s ease;
         }
-        .accordion-button {
-            @apply w-full text-left p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-300;
+
+        .nav-link:hover::after {
+            width: 100%;
         }
-        .accordion-content {
-            @apply p-4 bg-white;
+
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-content {
+            max-height: 500px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
         }
     </style>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.faq-toggle').click(function() {
-                var content = $(this).next('.faq-content');
-                var icon = $(this).find('.faq-icon');
-                
-                content.slideToggle();
-                icon.toggleClass('fa-plus fa-minus');
-            });
-        });
-    </script>
-
 </head>
 
-<body class="flex flex-col min-h-screen" style="font-family: 'Inter', sans-serif;">
+<body class="font-sans antialiased bg-gray-50">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full ring-2 ring-ucm-gold/50 group-hover:ring-ucm-gold transition-all" loading="lazy">
+                    <span class="text-white text-xl font-semibold tracking-tight">Bellevue Ranch</span>
+                </a>
 
-    <header class="bg-gray-800 text-white p-4 sticky top-0 z-50">
-        <nav class="container mx-auto flex justify-between items-center">
-            <a href="./index.html" class="text-white text-2xl font-bold flex items-center">
-                <img src="img/bellevue_ranch.png" alt="Logo" class="h-8 w-8 mr-2 rounded-full">
-                Bellevue Ranch House
-            </a>
-            <div class="hidden md:flex space-x-4">
-                <a href="about.html" class="text-white font-bold text-lg hover:text-blue-300">About</a>
-                <a href="photos.html" class="text-white font-bold text-lg hover:text-blue-300">Photos</a>
-                <a href="pricing.html" class="text-white font-bold text-lg hover:text-blue-300">Pricing</a>
-                <a href="contact.html" class="text-white font-bold text-lg hover:text-blue-300">Contact</a>
-                <a href="faqs.html" class="text-white font-bold text-lg hover:text-blue-300">FAQs</a>
-            </div>
-            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
-                <i class="fa fa-bars text-2xl"></i>
-            </button>
-        </nav>
-        <div class="hidden md:hidden mt-4" id="mobile-menu">
-            <a href="about.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">About</a>
-            <a href="photos.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Photos</a>
-            <a href="pricing.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Pricing</a>
-            <a href="contact.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Contact</a>
-            <a href="faqs.html" class="block py-2 px-4 text-sm text-blue-300 bg-gray-700">FAQs</a>
-        </div>
-    </header>
-
-    <main class="flex-grow">
-        <section class="py-20">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Frequently Asked Questions</h1>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">About</a>
+                    <a href="photos.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Photos</a>
+                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Pricing</a>
+                    <a href="faqs.html" class="nav-link text-ucm-gold font-medium">FAQs</a>
+                    <a href="apply.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Apply</a>
+                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-2.5 px-6 rounded-full">
+                        Contact Us
+                    </a>
                 </div>
 
-                <div class="max-w-3xl mx-auto space-y-4">
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. How do I apply?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A: The first step to applying is to send an application located on the contact page.</p>
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">About</a>
+                    <a href="photos.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Photos</a>
+                    <a href="pricing.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Pricing</a>
+                    <a href="faqs.html" class="text-ucm-gold font-medium py-2">FAQs</a>
+                    <a href="apply.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Apply</a>
+                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-3 px-6 rounded-full text-center mt-2">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-ucm-blue-dark via-ucm-blue to-ucm-blue-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+                    Frequently Asked <span class="text-gradient">Questions</span>
+                </h1>
+                <p class="text-xl text-gray-300 leading-relaxed">
+                    Find answers to common questions about renting at Bellevue Ranch House.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto space-y-4">
+
+                <!-- FAQ Items -->
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">How do I apply?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            The first step to applying is to send an application located on the <a href="contact.html" class="text-ucm-blue hover:underline">contact page</a>.
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. Where do I send the application?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. Please send it to bellevueranchhouse@gmail.com</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">Where do I send the application?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            Please send it to <a href="mailto:bellevueranchhouse@gmail.com" class="text-ucm-blue hover:underline">bellevueranchhouse@gmail.com</a>
                         </div>
                     </div>
-                     <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. Are pets allowed?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. Sorry no pets are allowed the owner's family has a severe allergic reaction (anaphylaxis) to animals.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">Are pets allowed?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            Sorry, no pets are allowed. The owner's family has a severe allergic reaction (anaphylaxis) to animals.
                         </div>
                     </div>
-                     <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. Is it co-ed?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. Yes. There are no gender restrictions, the house tends to be co-ed.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">Is it co-ed?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            Yes. There are no gender restrictions; the house tends to be co-ed.
                         </div>
                     </div>
-                     <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. What is due when I sign?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. First month's rent, last month's rent, and a security deposit. If your rent is $450, then first month's rent is $450, last month's rent is $450 and your security deposit is $450 totaling $1350. You will also need to send copies of your driver's licenses.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">What is due when I sign?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            First month's rent, last month's rent, and a security deposit. For example, if your rent is $500, the total due at signing would be $1,500 ($500 x 3). You will also need to provide copies of your driver's licenses.
                         </div>
                     </div>
-                     <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. Is the security deposit refundable?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. It's fully refundable if you move out with the room in the same condition that you received it in. You must take photos and video upon move out.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">Is the security deposit refundable?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            It's fully refundable if you move out with the room in the same condition that you received it in. You must take photos and video upon move out.
                         </div>
                     </div>
-                     <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. What is first month's rent?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. First month's rent covers the first month you reside in the apartment, typically this is August 15th to September 14th.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">What is first month's rent?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            First month's rent covers the first month you reside in the apartment, typically August 15th to September 14th.
                         </div>
                     </div>
-                     <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. What is last month's rent?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. Last month's rent covers the very last month you will reside in the apartment, typically this is July 15th to August 14th. <a href="https://legalbeagle.com/13724374-last-months-rent-how-does-it-work-in-california.html" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">More info</a>.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">What is last month's rent?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            Last month's rent covers the very last month you will reside in the apartment, typically July 15th to August 14th. <a href="https://legalbeagle.com/13724374-last-months-rent-how-does-it-work-in-california.html" class="text-ucm-blue hover:underline" target="_blank" rel="noopener noreferrer">Learn more</a>.
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. How do I view the house?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. Please send an application located on the contact page and an email with your cell phone number and the owner will coordinate a viewing with an existing tenant.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">How do I view the house?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            Please send an application located on the <a href="contact.html" class="text-ucm-blue hover:underline">contact page</a> and an email with your cell phone number. The owner will coordinate a viewing with an existing tenant.
                         </div>
                     </div>
-                     <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. What are the steps after viewing and the Zillow application?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. You and your co-signer will fill out a MySmartMove application to do a criminal background check and soft credit check.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">What are the steps after viewing?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            You and your co-signer will fill out a MySmartMove application for a criminal background check and soft credit check.
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. Do I need to include my social security for the Zillow application?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. No, you do not.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">Is internet included?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            Students are responsible for purchasing a contract and splitting it among tenants, which tends to be cheaper based on student promotions.
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. Is internet included?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. The students are responsible for purchasing a contract and splitting it among tenants, which tends to be cheaper based on student promotions.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">Can I share the room?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            No, rooms are single-occupancy only.
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. Can I share the room?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. No, rooms are single-occupancy only.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">Can my parent or friend view the room for me?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            The owner strongly prefers to communicate with the future tenant and for them to visit in person.
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. Can my parent or friend view the room for me?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <p>A. The owner strongly prefers to communicate with the future tenant and for them to visit in person.</p>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">Is there a video of the place?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            Yes! Check out our <a href="photos.html" class="text-ucm-blue hover:underline">photos page</a> for a video tour. You can also view this <a href="https://imgur.com/a/E6bcFJp" class="text-ucm-blue hover:underline" target="_blank" rel="noopener noreferrer">video of the master bedroom</a> (availability may vary).
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. Is there a video of the place?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                             <p>A. Here's a video of the master, but it is likely not available. <a href="https://imgur.com/a/E6bcFJp" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">View Video</a>.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="faq-toggle w-full text-left p-6 flex justify-between items-center">
-                            <span class="font-semibold text-lg text-gray-800">Q. What are the house rules?</span>
-                            <i class="fa fa-plus faq-icon text-blue-500"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 pt-0 text-gray-700">
-                            <ol class="list-decimal pl-5 space-y-2">
-                                <li>Please be respectful of your fellow housemate’s items that do not belong to you. Unless otherwise specified please do not use/consume any items that are not yours.</li>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-lg text-gray-900">What are the house rules?</span>
+                        <svg class="faq-icon w-5 h-5 text-ucm-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 text-gray-600">
+                            <ol class="list-decimal pl-5 space-y-3">
+                                <li>Please be respectful of your fellow housemate's items. Do not use/consume any items that are not yours unless otherwise specified.</li>
                                 <li>Quiet hours are expected after 11pm on weekdays.</li>
-                                <li>No partying, smoking or drug use.</li>
-                                <li>Guests visiting for the day are certainly welcome, but you are fully responsible for your guests adhering to house rules.</li>
-                                <li>You are responsible for any mess you create in the common areas; please make sure to keep the common areas clean. Do not leave belongings around the house.</li>
-                                <li>Any guests that may require an overnight stay or longer should be e-mailed to the entire house and approved by the landlord.</li>
+                                <li>No partying, smoking, or drug use.</li>
+                                <li>Guests visiting for the day are welcome, but you are fully responsible for your guests adhering to house rules.</li>
+                                <li>You are responsible for any mess you create in common areas. Keep common areas clean and do not leave belongings around the house.</li>
+                                <li>Overnight guests or longer stays should be emailed to the entire house and approved by the landlord.</li>
                                 <li>No pets.</li>
                             </ol>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto text-center">
-            <ul class="flex justify-center space-x-6 mb-4">
-                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
-                <li><a href="about.html" class="hover:text-blue-300">About</a></li>
-                <li><a href="photos.html" class="hover:text-blue-300">Photos</a></li>
-                <li><a href="pricing.html" class="hover:text-blue-300">Pricing</a></li>
-                <li><a href="contact.html" class="hover:text-blue-300">Contact</a></li>
-                <li><a href="faqs.html" class="hover:text-blue-300">FAQs</a></li>
-            </ul>
-            <p>&copy; 2024 Bellevue Ranch House. All Rights Reserved.</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-16 text-center">
+                <p class="text-gray-600 mb-6">Still have questions?</p>
+                <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-4 px-8 rounded-full text-lg inline-flex items-center justify-center">
+                    Contact Us
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ucm-blue-dark py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full" loading="lazy">
+                    <span class="text-white font-semibold">Bellevue Ranch House</span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+                    <a href="index.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-400 hover:text-ucm-gold transition-colors">About</a>
+                    <a href="photos.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Photos</a>
+                    <a href="pricing.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Contact</a>
+                    <a href="faqs.html" class="text-gray-400 hover:text-ucm-gold transition-colors">FAQs</a>
+                </div>
+            </div>
+
+            <div class="border-t border-ucm-blue mt-8 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Bellevue Ranch House. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        $(document).ready(function() {
-            $('#mobile-menu-button').click(function() {
-                $('#mobile-menu').toggleClass('hidden');
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const toggle = item.querySelector('.faq-toggle');
+            toggle.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('open')) {
+                        otherItem.classList.remove('open');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('open');
             });
         });
     </script>
-
 </body>
 </html>

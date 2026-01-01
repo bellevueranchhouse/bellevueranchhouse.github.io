@@ -1,344 +1,428 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Photos - Bellevue Ranch House</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Photos of the Bellevue Ranch House, a home for UC Merced students.">
-    <meta name="author" content="">
+    <meta name="description" content="View photos of Bellevue Ranch House - student housing near UC Merced. See bedrooms, bathrooms, kitchen, and common areas.">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- Simple favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
-    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#3b82f6',
-                        'secondary': '#6b7280'
+                        'ucm-blue': '#002856',
+                        'ucm-gold': '#F2A900',
+                        'ucm-blue-light': '#003366',
+                        'ucm-blue-dark': '#001a3d',
+                        'ucm-gold-light': '#ffbe33',
+                        'ucm-gold-dark': '#cc8800',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
-    
-    <style>
-        .btn-primary {
-            @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300;
-        }
-        .btn-secondary {
-            @apply bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300;
-        }
-        .card {
-            @apply bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg;
-        }
-        .nav-link {
-            @apply text-blue-600 hover:text-blue-800 transition duration-300;
-        }
-    </style>
 
     <style>
-        .portfolio-item {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        html { scroll-behavior: smooth; }
+
+        .glass-nav {
+            background: rgba(0, 40, 86, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+        .text-gradient {
+            background: linear-gradient(135deg, #F2A900 0%, #ffbe33 50%, #cc8800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #F2A900 0%, #cc8800 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px -10px rgba(242, 169, 0, 0.5);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #F2A900, #cc8800);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay {
+            background: linear-gradient(to top, rgba(0, 40, 86, 0.9) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-backdrop {
+            background: rgba(0, 26, 61, 0.95);
+            backdrop-filter: blur(8px);
         }
     </style>
 </head>
 
-<body class="flex flex-col min-h-screen">
-    <header class="bg-gray-800 text-white p-4 sticky top-0 z-50">
-        <nav class="container mx-auto flex justify-between items-center">
-            <a href="./index.html" class="text-white text-2xl font-bold flex items-center">
-                <img src="img/bellevue_ranch.png" alt="Logo" class="h-8 w-8 mr-2 rounded-full">
-                Bellevue Ranch House
-            </a>
-            <div class="hidden md:flex space-x-4">
-                <a href="about.html" class="text-white font-bold text-lg hover:text-blue-300">About</a>
-                <a href="photos.html" class="text-white font-bold text-lg hover:text-blue-300">Photos</a>
-                <a href="pricing.html" class="text-white font-bold text-lg hover:text-blue-300">Pricing</a>
-                <a href="contact.html" class="text-white font-bold text-lg hover:text-blue-300">Contact</a>
-                <a href="faqs.html" class="text-white font-bold text-lg hover:text-blue-300">FAQs</a>
+<body class="font-sans antialiased bg-gray-50">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full ring-2 ring-ucm-gold/50 group-hover:ring-ucm-gold transition-all" loading="lazy">
+                    <span class="text-white text-xl font-semibold tracking-tight">Bellevue Ranch</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">About</a>
+                    <a href="photos.html" class="nav-link text-ucm-gold font-medium">Photos</a>
+                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Pricing</a>
+                    <a href="faqs.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">FAQs</a>
+                    <a href="apply.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Apply</a>
+                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-2.5 px-6 rounded-full">
+                        Contact Us
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
-            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
-                <i class="fa fa-bars text-2xl"></i>
-            </button>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">About</a>
+                    <a href="photos.html" class="text-ucm-gold font-medium py-2">Photos</a>
+                    <a href="pricing.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Pricing</a>
+                    <a href="faqs.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">FAQs</a>
+                    <a href="apply.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Apply</a>
+                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-3 px-6 rounded-full text-center mt-2">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
         </nav>
-        <div class="hidden md:hidden mt-4" id="mobile-menu">
-            <a href="about.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">About</a>
-            <a href="photos.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">Photos</a>
-            <a href="pricing.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">Pricing</a>
-            <a href="contact.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">Contact</a>
-            <a href="faqs.html" class="block text-white font-bold text-lg hover:text-blue-300 py-2">FAQs</a>
-        </div>
     </header>
 
-    <main class="flex-grow">
-        <section class="py-20">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Home Photos</h1>
-                    <p class="text-xl text-gray-600 mt-4">A glimpse into your future home.</p>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-ucm-blue via-ucm-blue-light to-ucm-blue">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+                    Home <span class="text-gradient">Photos</span>
+                </h1>
+                <p class="text-xl text-gray-300 leading-relaxed">
+                    Take a virtual tour of your future home. Click any photo to enlarge.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Gallery Items -->
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/01_frontlivingroom.jpg', 'Front Living Room')">
+                    <img src="img/house/01_frontlivingroom.jpg" alt="Front Living Room" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Front Living Room</span>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                            <img src="img/house/01_frontlivingroom.jpg" alt="Front Living Room" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Front Living Room</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/1_roombyfrontdoor.jpeg', 'Front Spare Room')">
+                    <img src="img/house/1_roombyfrontdoor.jpeg" alt="Front Spare Room" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Front Spare Room</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                            <img src="img/house/1_roombyfrontdoor.jpeg" alt="Front Spare Room" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Front Spare Room</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/2_frominsideroombyfrontdoor.jpg', 'Front Spare Room')">
+                    <img src="img/house/2_frominsideroombyfrontdoor.jpg" alt="Front Spare Room" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Front Spare Room</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                            <img src="img/house/2_frominsideroombyfrontdoor.jpg" alt="Front Spare Room" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Front Spare Room</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/3_kitchenfromlivingroom.jpg', 'Kitchen')">
+                    <img src="img/house/3_kitchenfromlivingroom.jpg" alt="Kitchen" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Kitchen</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                            <img src="img/house/3_kitchenfromlivingroom.jpg" alt="Kitchen" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Kitchen</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/4_kitchenpantry.jpg', 'Kitchen Pantry')">
+                    <img src="img/house/4_kitchenpantry.jpg" alt="Kitchen Pantry" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Kitchen Pantry</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                            <img src="img/house/4_kitchenpantry.jpg" alt="Kitchen Pantry" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Kitchen Pantry</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/5_kitchendishwasher.jpg', 'Kitchen Dishwasher')">
+                    <img src="img/house/5_kitchendishwasher.jpg" alt="Kitchen Dishwasher" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Kitchen Dishwasher</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                            <img src="img/house/5_kitchendishwasher.jpg" alt="Kitchen Dishwasher" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Kitchen Dishwasher</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/6_fromlivingroom_laundry_upstairs.jpg', 'Laundry & Stairs')">
+                    <img src="img/house/6_fromlivingroom_laundry_upstairs.jpg" alt="Laundry & Stairs" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Laundry & Stairs</span>
                     </div>
-                    
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/6_fromlivingroom_laundry_upstairs.jpg" alt="Laundry Room" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Laundry &amp; Stairs</span>
-                            </div>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/7_MSbedroomL1.jpg" alt="Master Bedroom" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Master Bedroom</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/7_MSbedroomL1.jpg', 'Master Bedroom')">
+                    <img src="img/house/7_MSbedroomL1.jpg" alt="Master Bedroom" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Master Bedroom</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/8_MSbedroomL1_bathroom.JPG" alt="Master Bathroom" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Master Bathroom</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/8_MSbedroomL1_bathroom.JPG', 'Master Bathroom')">
+                    <img src="img/house/8_MSbedroomL1_bathroom.JPG" alt="Master Bathroom" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Master Bathroom</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/8_MSbedroomL1_bathroom1.jpg" alt="Master Bathroom Sinks" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Master Bathroom Sinks</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/8_MSbedroomL1_bathroom1.jpg', 'Master Bathroom Sinks')">
+                    <img src="img/house/8_MSbedroomL1_bathroom1.jpg" alt="Master Bathroom Sinks" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Master Bathroom Sinks</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/9_MSbedroomL1_bathroom2.jpg" alt="Master Bathroom Tub" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Master Bathroom Tub</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/9_MSbedroomL1_bathroom2.jpg', 'Master Bathroom Tub')">
+                    <img src="img/house/9_MSbedroomL1_bathroom2.jpg" alt="Master Bathroom Tub" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Master Bathroom Tub</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/10_MSbedroomL1_bathroom3.jpg" alt="Master Bathroom Shower" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Master Bathroom Shower</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/10_MSbedroomL1_bathroom3.jpg', 'Master Bathroom Shower')">
+                    <img src="img/house/10_MSbedroomL1_bathroom3.jpg" alt="Master Bathroom Shower" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Master Bathroom Shower</span>
                     </div>
+                </div>
 
-                     <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/11_MSbedroomL1_closet.jpg" alt="Master Bedroom Closet" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Master Bedroom Closet</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/11_MSbedroomL1_closet.jpg', 'Master Bedroom Closet')">
+                    <img src="img/house/11_MSbedroomL1_closet.jpg" alt="Master Bedroom Closet" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Master Bedroom Closet</span>
                     </div>
+                </div>
 
-                     <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/12_bedroom1and2_L2.jpg" alt="Upstairs Bedroom" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Upstairs Bedroom</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/12_bedroom1and2_L2.jpg', 'Upstairs Bedroom')">
+                    <img src="img/house/12_bedroom1and2_L2.jpg" alt="Upstairs Bedroom" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Upstairs Bedroom</span>
                     </div>
+                </div>
 
-                     <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/13_bedroom1and_L2_closet.jpg" alt="Upstairs Bedroom Closet" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Upstairs Bedroom Closet</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/13_bedroom1and_L2_closet.jpg', 'Upstairs Bedroom Closet')">
+                    <img src="img/house/13_bedroom1and_L2_closet.jpg" alt="Upstairs Bedroom Closet" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Upstairs Bedroom Closet</span>
                     </div>
+                </div>
 
-                     <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/14_sharedBath_L2_1.jpg" alt="Shared Bathroom" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Shared Bathroom</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/14_sharedBath_L2_1.jpg', 'Shared Bathroom')">
+                    <img src="img/house/14_sharedBath_L2_1.jpg" alt="Shared Bathroom" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Shared Bathroom</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/15_sharedBath_L2_2.jpg" alt="Shared Bathroom" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Shared Bathroom</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/15_sharedBath_L2_2.jpg', 'Shared Bathroom')">
+                    <img src="img/house/15_sharedBath_L2_2.jpg" alt="Shared Bathroom" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Shared Bathroom</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/16_bedroom3_L2.jpg" alt="Upstairs Bedroom" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Upstairs Bedroom</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/16_bedroom3_L2.jpg', 'Upstairs Bedroom')">
+                    <img src="img/house/16_bedroom3_L2.jpg" alt="Upstairs Bedroom" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Upstairs Bedroom</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/17_bedroom3_L2_closet.jpg" alt="Upstairs Bedroom Closet" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Upstairs Bedroom Closet</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/17_bedroom3_L2_closet.jpg', 'Upstairs Bedroom Closet')">
+                    <img src="img/house/17_bedroom3_L2_closet.jpg" alt="Upstairs Bedroom Closet" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Upstairs Bedroom Closet</span>
                     </div>
+                </div>
 
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative">
-                             <img src="img/house/18_backyard1.jpg" alt="Backyard" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">Backyard</span>
-                            </div>
-                        </div>
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg cursor-pointer aspect-[4/3]" onclick="openModal('img/house/18_backyard1.jpg', 'Backyard')">
+                    <img src="img/house/18_backyard1.jpg" alt="Backyard" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-6">
+                        <span class="text-white font-semibold text-lg">Backyard</span>
                     </div>
-                    
-                    <div class="portfolio-item group overflow-hidden rounded-lg shadow-lg bg-white">
-                        <div class="relative h-64">
-                            <video controls class="w-full h-full object-cover">
-                                <source src="img/cm-chat-media-video-1_cba9c04f-a549-5245-bb03-bf4495e24705_67_0_0%202.MOV" type="video/quicktime">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-white text-lg font-bold">House&nbsp;Tour</span>
-                            </div>
-                        </div>
+                </div>
+
+                <!-- Video Tour -->
+                <div class="gallery-item relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-ucm-blue">
+                    <video controls class="w-full h-full object-cover">
+                        <source src="img/cm-chat-media-video-1_cba9c04f-a549-5245-bb03-bf4495e24705_67_0_0%202.MOV" type="video/quicktime">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="absolute top-4 left-4 bg-ucm-gold text-ucm-blue-dark text-sm font-semibold px-3 py-1 rounded-full">
+                        Video Tour
                     </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-16 text-center">
+                <p class="text-gray-600 mb-6">Like what you see?</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="pricing.html" class="btn-primary text-ucm-blue-dark font-semibold py-4 px-8 rounded-full text-lg inline-flex items-center justify-center">
+                        View Pricing
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                    <a href="contact.html" class="bg-gray-100 text-gray-700 font-semibold py-4 px-8 rounded-full text-lg hover:bg-gray-200 transition-colors inline-flex items-center justify-center">
+                        Contact Us
+                    </a>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto text-center">
-            <ul class="flex justify-center space-x-6 mb-4">
-                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
-                <li><a href="about.html" class="hover:text-blue-300">About</a></li>
-                <li><a href="photos.html" class="hover:text-blue-300">Photos</a></li>
-                <li><a href="pricing.html" class="hover:text-blue-300">Pricing</a></li>
-                <li><a href="contact.html" class="hover:text-blue-300">Contact</a></li>
-                <li><a href="faqs.html" class="hover:text-blue-300">FAQs</a></li>
-            </ul>
-            <p>&copy; 2024 Bellevue Ranch House. All Rights Reserved.</p>
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4">
+        <button onclick="closeModal()" class="absolute top-6 right-6 text-white hover:text-ucm-gold transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="max-w-5xl w-full">
+            <img id="modal-image" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-lg">
+            <p id="modal-caption" class="text-white text-center mt-4 text-lg font-medium"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-ucm-blue-dark py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full" loading="lazy">
+                    <span class="text-white font-semibold">Bellevue Ranch House</span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+                    <a href="index.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-400 hover:text-ucm-gold transition-colors">About</a>
+                    <a href="photos.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Photos</a>
+                    <a href="pricing.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Contact</a>
+                    <a href="faqs.html" class="text-gray-400 hover:text-ucm-gold transition-colors">FAQs</a>
+                </div>
+            </div>
+
+            <div class="border-t border-ucm-blue mt-8 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Bellevue Ranch House. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Image Modal -->
-    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
-        <button id="close-modal" class="absolute top-5 right-5 text-white text-3xl font-bold focus:outline-none">&times;</button>
-        <img id="modal-img" src="" alt="Expanded photo" class="max-h-[90vh] max-w-[90vw] rounded shadow-lg">
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            // Mobile menu toggle
-            $('#mobile-menu-button').click(function() {
-                $('#mobile-menu').toggleClass('hidden');
-            });
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
-            // Click-to-enlarge for gallery images
-            $('.portfolio-item img')
-                .addClass('cursor-zoom-in')
-                .on('click', function () {
-                    const src = $(this).attr('src');
-                    $('#modal-img').attr('src', src);
-                    $('#image-modal').removeClass('hidden');
-                });
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
 
-            // Close modal when clicking outside the image or on the × button
-            $('#close-modal, #image-modal').on('click', function (e) {
-                if (e.target.id === 'image-modal' || e.target.id === 'close-modal') {
-                    $('#image-modal').addClass('hidden');
-                    $('#modal-img').attr('src', '');
-                }
-            });
+        // Modal functions
+        const modal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalCaption = document.getElementById('modal-caption');
 
-            // Close modal with ESC key
-            $(document).on('keyup', function (e) {
-                if (e.key === 'Escape') {
-                    $('#image-modal').addClass('hidden');
-                    $('#modal-img').attr('src', '');
-                }
-            });
+        function openModal(src, caption) {
+            modalImage.src = src;
+            modalImage.alt = caption;
+            modalCaption.textContent = caption;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            modalImage.src = '';
+        }
+
+        // Close on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
     </script>
 </body>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Application Submitted - Bellevue Ranch House</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your rental application has been submitted successfully.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ucm-blue': '#002856',
+                        'ucm-gold': '#F2A900',
+                        'ucm-blue-light': '#003366',
+                        'ucm-blue-dark': '#001a3d',
+                        'ucm-gold-light': '#ffbe33',
+                        'ucm-gold-dark': '#cc8800',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .glass-nav {
+            background: rgba(0, 40, 86, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #F2A900 0%, #ffbe33 50%, #cc8800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #F2A900 0%, #cc8800 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px -10px rgba(242, 169, 0, 0.5);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #F2A900, #cc8800);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .success-icon {
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .checkmark {
+            animation: drawCheck 0.5s ease-out 0.3s forwards;
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased bg-gray-50">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full ring-2 ring-ucm-gold/50 group-hover:ring-ucm-gold transition-all" loading="lazy">
+                    <span class="text-white text-xl font-semibold tracking-tight">Bellevue Ranch</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">About</a>
+                    <a href="photos.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Photos</a>
+                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Pricing</a>
+                    <a href="faqs.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">FAQs</a>
+                    <a href="apply.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Apply</a>
+                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-2.5 px-6 rounded-full">
+                        Contact Us
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">About</a>
+                    <a href="photos.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Photos</a>
+                    <a href="pricing.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Pricing</a>
+                    <a href="faqs.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">FAQs</a>
+                    <a href="apply.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Apply</a>
+                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-3 px-6 rounded-full text-center mt-2">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Success Content -->
+    <section class="min-h-screen pt-32 pb-20 bg-gradient-to-br from-ucm-blue-dark via-ucm-blue to-ucm-blue-dark flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <!-- Success Icon -->
+                <div class="success-icon w-24 h-24 bg-ucm-gold rounded-full flex items-center justify-center mx-auto mb-8">
+                    <svg class="w-12 h-12 text-ucm-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path class="checkmark" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+
+                <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+                    Application <span class="text-gradient">Submitted!</span>
+                </h1>
+
+                <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                    Thank you for applying to Bellevue Ranch House. We have received your application and will review it shortly.
+                </p>
+
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-8 mb-8">
+                    <h2 class="text-xl font-bold text-white mb-4">What Happens Next?</h2>
+                    <ul class="text-left text-gray-300 space-y-4">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-ucm-gold/20 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                                <span class="text-ucm-gold font-bold">1</span>
+                            </span>
+                            <span>We will review your application within <strong class="text-white">1-2 business days</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-ucm-gold/20 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                                <span class="text-ucm-gold font-bold">2</span>
+                            </span>
+                            <span>We will contact you to <strong class="text-white">schedule a viewing</strong> of the property.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-ucm-gold/20 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                                <span class="text-ucm-gold font-bold">3</span>
+                            </span>
+                            <span>You and your co-signer will complete a <strong class="text-white">MySmartMove background check</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-ucm-gold/20 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                                <span class="text-ucm-gold font-bold">4</span>
+                            </span>
+                            <span>Once approved, we'll coordinate <strong class="text-white">lease signing and move-in</strong>.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="text-gray-400 mb-8">
+                    Questions? Email us at <a href="mailto:bellevueranchhouse@gmail.com" class="text-ucm-gold hover:underline">bellevueranchhouse@gmail.com</a>
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html" class="btn-primary text-ucm-blue-dark font-semibold py-4 px-8 rounded-full text-lg inline-flex items-center justify-center">
+                        Back to Home
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </a>
+                    <a href="faqs.html" class="bg-white/10 text-white font-semibold py-4 px-8 rounded-full text-lg hover:bg-white/20 transition-colors inline-flex items-center justify-center">
+                        View FAQs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ucm-blue-dark py-12 border-t border-ucm-blue">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full" loading="lazy">
+                    <span class="text-white font-semibold">Bellevue Ranch House</span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+                    <a href="index.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-400 hover:text-ucm-gold transition-colors">About</a>
+                    <a href="photos.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Photos</a>
+                    <a href="pricing.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Contact</a>
+                    <a href="faqs.html" class="text-gray-400 hover:text-ucm-gold transition-colors">FAQs</a>
+                </div>
+            </div>
+
+            <div class="border-t border-ucm-blue mt-8 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Bellevue Ranch House. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+    </script>
+</body>
+</html>
