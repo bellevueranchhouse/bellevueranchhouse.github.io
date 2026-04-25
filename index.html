@@ -2,343 +2,201 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Bellevue Ranch House - Student Housing Near UC Merced</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium off-campus housing for UC Merced students. Comfortable rooms, great location, and affordable pricing.">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'ucm-blue': '#002856',
-                        'ucm-gold': '#F2A900',
-                        'ucm-blue-light': '#003366',
-                        'ucm-blue-dark': '#001a3d',
-                        'ucm-gold-light': '#ffbe33',
-                        'ucm-gold-dark': '#cc8800',
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'display': ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        html { scroll-behavior: smooth; }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(0, 40, 86, 0.65) 0%, rgba(0, 51, 102, 0.55) 50%, rgba(0, 26, 61, 0.65) 100%);
-        }
-
-        .glass-nav {
-            background: rgba(0, 40, 86, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #F2A900 0%, #ffbe33 50%, #cc8800 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #F2A900 0%, #cc8800 100%);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px -10px rgba(242, 169, 0, 0.5);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-4px);
-            border-color: rgba(242, 169, 0, 0.3);
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #F2A900, #cc8800);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-    </style>
+    <title>Bellevue Ranch House | Student Housing Near UC Merced</title>
+    <meta name="description" content="Bellevue Ranch House offers off-campus housing near UC Merced with student-friendly pricing, study-focused living, and easy CatTracks access.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A1%3C/text%3E%3C/svg%3E">
 </head>
-
-<body class="font-sans antialiased">
-    <!-- Hero Section with Full Screen Background -->
-    <div class="relative min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('img/bvr.JPG');">
-        <div class="absolute inset-0 hero-gradient"></div>
-
-        <!-- Navigation -->
-        <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
-            <nav class="container mx-auto px-6 py-4">
-                <div class="flex justify-between items-center">
-                    <a href="index.html" class="flex items-center space-x-3 group">
-                        <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full ring-2 ring-ucm-gold/50 group-hover:ring-ucm-gold transition-all" loading="lazy">
-                        <span class="text-white text-xl font-semibold tracking-tight">Bellevue Ranch</span>
-                    </a>
-
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">About</a>
-                        <a href="photos.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Photos</a>
-                        <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Pricing</a>
-                        <a href="faqs.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">FAQs</a>
-                        <a href="apply.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Apply</a>
-                        <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-2.5 px-6 rounded-full">
-                            Contact Us
-                        </a>
-                    </div>
-
-                    <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu -->
-                <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
-                    <div class="flex flex-col space-y-3">
-                        <a href="about.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">About</a>
-                        <a href="photos.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Photos</a>
-                        <a href="pricing.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Pricing</a>
-                        <a href="faqs.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">FAQs</a>
-                        <a href="apply.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Apply</a>
-                        <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-3 px-6 rounded-full text-center mt-2">
-                            Contact Us
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <!-- Hero Content -->
-        <div class="relative z-10 min-h-screen flex items-center justify-center px-6">
-            <div class="text-center max-w-4xl mx-auto">
-                <div class="animate-float mb-6">
-                    <span class="inline-block bg-ucm-gold/20 text-ucm-gold text-sm font-semibold px-4 py-2 rounded-full border border-ucm-gold/30">
-                        Now Accepting Applications for 2025-2026
-                    </span>
-                </div>
-
-                <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                    Welcome Home,<br>
-                    <span class="text-gradient">Bobcats!</span>
-                </h1>
-
-                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                    Your ideal off-campus housing near UC Merced.
-                    Comfortable, convenient, and community-focused.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="pricing.html" class="btn-primary text-ucm-blue-dark font-semibold py-4 px-8 rounded-full text-lg inline-flex items-center justify-center">
-                        View Rooms & Pricing
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </a>
-                    <a href="photos.html" class="btn-secondary text-white font-semibold py-4 px-8 rounded-full text-lg inline-flex items-center justify-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
-                        See Photos
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-            <a href="#features" class="flex flex-col items-center text-white/60 hover:text-white transition-colors">
-                <span class="text-sm font-medium mb-2">Scroll to explore</span>
-                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                </svg>
+<body>
+    <header class="site-header" data-header>
+        <nav class="site-nav container" aria-label="Primary navigation">
+            <a class="brand" href="index.html">
+                <img class="brand-mark" src="img/bellevue-ranch-mark.jpg" alt="Bellevue Ranch logo" loading="lazy">
+                <span class="brand-copy">
+                    <span class="brand-title">Bellevue Ranch House</span>
+                    <span class="brand-sub">Near UC Merced</span>
+                </span>
             </a>
-        </div>
-    </div>
-
-    <!-- Features Section -->
-    <section id="features" class="bg-ucm-blue py-24">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-                    Why Choose <span class="text-gradient">Bellevue Ranch?</span>
-                </h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
-                    Everything you need for a successful academic year, all in one comfortable home.
-                </p>
+            <div class="nav-links">
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="photos.html">Photos</a>
+                <a class="nav-link" href="pricing.html">Pricing</a>
+                <a class="nav-link" href="faqs.html">FAQs</a>
+                <a class="nav-link" href="apply.html">Apply</a>
+                <a class="btn btn-primary" href="contact.html">Contact</a>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="feature-card rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 bg-ucm-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-ucm-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Prime Location</h3>
-                    <p class="text-gray-300">2-3 minute walk to Cat Tracks bus stop. Only 3.5 miles from UC Merced campus.</p>
-                </div>
-
-                <div class="feature-card rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 bg-ucm-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-ucm-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Affordable Pricing</h3>
-                    <p class="text-gray-300">Rooms starting at $500/month. Utilities split equally among tenants.</p>
-                </div>
-
-                <div class="feature-card rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 bg-ucm-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-ucm-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Study-Friendly</h3>
-                    <p class="text-gray-300">Quiet environment with respectful housemates. Perfect for focused studying.</p>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="about.html" class="inline-flex items-center text-ucm-gold hover:text-ucm-gold-light font-semibold transition-colors">
-                    Learn more about the house
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
+            <button class="menu-button" data-menu-toggle aria-expanded="false" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </nav>
+        <div class="mobile-menu container" data-menu>
+            <div class="mobile-menu-inner">
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="photos.html">Photos</a>
+                <a class="nav-link" href="pricing.html">Pricing</a>
+                <a class="nav-link" href="faqs.html">FAQs</a>
+                <a class="nav-link" href="apply.html">Apply</a>
+                <a class="btn btn-primary" href="contact.html">Contact</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- CTA Section -->
-    <section class="bg-gradient-to-br from-ucm-gold to-ucm-gold-dark py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-ucm-blue-dark mb-4">
-                Ready to Find Your New Home?
-            </h2>
-            <p class="text-ucm-blue/80 text-lg mb-8 max-w-xl mx-auto">
-                Rooms fill up fast! Contact us today to schedule a viewing or submit your application.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html" class="bg-ucm-blue text-white font-semibold py-4 px-8 rounded-full text-lg hover:bg-ucm-blue-light transition-colors inline-flex items-center justify-center">
-                    Get in Touch
-                </a>
-                <a href="faqs.html" class="border-2 border-ucm-blue text-ucm-blue font-semibold py-4 px-8 rounded-full text-lg hover:bg-ucm-blue/10 transition-colors inline-flex items-center justify-center">
-                    View FAQs
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-ucm-blue-dark py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-3 mb-6 md:mb-0">
-                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full" loading="lazy">
-                    <span class="text-white font-semibold">Bellevue Ranch House</span>
+    <main>
+        <section class="page-hero with-image">
+            <div class="container hero-grid">
+                <div class="reveal">
+                    <span class="hero-eyebrow">Now Leasing for 2026-2027</span>
+                    <h1 class="hero-title">Live Close. Study Better. <span class="accent-text">Feel At Home.</span></h1>
+                    <p class="hero-lead">
+                        Bellevue Ranch House is built for UC Merced students who want a clean, quiet, and reliable place to live while balancing class, labs, and campus life.
+                    </p>
+                    <div class="button-row">
+                        <a class="btn btn-primary" href="pricing.html">View Rooms & Pricing</a>
+                        <a class="btn btn-secondary" href="photos.html">Tour the House</a>
+                    </div>
+                    <div class="kpi-strip">
+                        <article class="kpi-card">
+                            <strong>~3.1 mi</strong>
+                            <span>to UC Merced campus</span>
+                        </article>
+                        <article class="kpi-card">
+                            <strong>2-3 min walk</strong>
+                            <span>to CatTracks stop</span>
+                        </article>
+                        <article class="kpi-card">
+                            <strong>From $500/mo</strong>
+                            <span>student-friendly pricing</span>
+                        </article>
+                    </div>
                 </div>
+                <figure class="hero-visual reveal delay-2">
+                    <img src="img/bvr-hero.jpg" alt="Bellevue Ranch House exterior">
+                    <figcaption class="hero-visual-note">
+                        <strong>Student-focused housing</strong>
+                        <span>Spacious common areas, practical room options, and a respectful roommate atmosphere.</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
-                    <a href="index.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-400 hover:text-ucm-gold transition-colors">About</a>
-                    <a href="photos.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Photos</a>
-                    <a href="pricing.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Pricing</a>
-                    <a href="contact.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Contact</a>
-                    <a href="faqs.html" class="text-gray-400 hover:text-ucm-gold transition-colors">FAQs</a>
+        <section class="section">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Why Students Choose It</p>
+                    <h2 class="section-title">A setup designed for your semester rhythm</h2>
+                    <p class="section-copy">The house is structured around everyday student needs: reliable commute, predictable monthly costs, comfortable private space, and a chill shared environment.</p>
+                </header>
+                <div class="info-grid">
+                    <article class="card reveal">
+                        <div class="icon-token">01</div>
+                        <h3>Commute Advantage</h3>
+                        <p>Quick bus and drive access means less time in traffic and more time for classes, office hours, and group projects.</p>
+                    </article>
+                    <article class="card reveal delay-1">
+                        <div class="icon-token">02</div>
+                        <h3>Study-Friendly Culture</h3>
+                        <p>Quiet-hours expectations and respectful roommates help you focus during midterms, finals, and late-night assignment crunches.</p>
+                    </article>
+                    <article class="card reveal delay-2">
+                        <div class="icon-token">03</div>
+                        <h3>Clear Cost Structure</h3>
+                        <p>Simple room tiers and transparent utility sharing make budgeting easier for students and families.</p>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <div class="border-t border-ucm-blue mt-8 pt-8 text-center">
-                <p class="text-gray-500 text-sm">&copy; 2025 Bellevue Ranch House. All Rights Reserved.</p>
+        <section class="section">
+            <div class="container split">
+                <article class="surface-band reveal">
+                    <header class="section-head compact">
+                        <p class="eyebrow">Included Value</p>
+                        <h2 class="section-title">What comes with your rent</h2>
+                    </header>
+                    <ul class="feature-list">
+                        <li>Private bedroom options with practical layouts</li>
+                        <li>In-home washer and dryer access</li>
+                        <li>Shared kitchen and common spaces</li>
+                        <li>Roommate environment geared toward students</li>
+                        <li>Annual lease structure for academic stability</li>
+                    </ul>
+                </article>
+                <article class="surface-band reveal delay-1">
+                    <header class="section-head compact">
+                        <p class="eyebrow">Fast Application Flow</p>
+                        <h2 class="section-title">From interest to move-in</h2>
+                    </header>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <span class="step-no">1</span>
+                            <div class="step-copy">
+                                <strong>Submit your application</strong>
+                                <p>Fill out the online form with renter and guarantor details.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <span class="step-no">2</span>
+                            <div class="step-copy">
+                                <strong>Schedule a tour</strong>
+                                <p>See the home and confirm room fit before final steps.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <span class="step-no">3</span>
+                            <div class="step-copy">
+                                <strong>Complete screening + lease</strong>
+                                <p>Finalize background check, lease, and move-in timeline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="container">
+                <section class="cta-band reveal">
+                    <h3>Want to lock in housing before the rush?</h3>
+                    <p>Rooms fill quickly ahead of each academic year. Reach out now and secure your best-fit room early.</p>
+                    <div class="button-row">
+                        <a class="btn btn-primary" href="apply.html">Start Application</a>
+                        <a class="btn btn-soft" href="contact.html">Ask Questions</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-shell">
+            <div class="footer-top">
+                <a class="brand" href="index.html">
+                    <img class="brand-mark" src="img/bellevue-ranch-mark.jpg" alt="Bellevue Ranch logo" loading="lazy">
+                    <span class="brand-copy">
+                        <span class="brand-title">Bellevue Ranch House</span>
+                        <span class="brand-sub">Built for UC Merced students</span>
+                    </span>
+                </a>
+                <nav class="footer-links" aria-label="Footer links">
+                    <a href="about.html">About</a>
+                    <a href="photos.html">Photos</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="faqs.html">FAQs</a>
+                    <a href="apply.html">Apply</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span data-current-year></span> Bellevue Ranch House. All rights reserved.</span>
+                <span>Merced, California</span>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-            } else {
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-            }
-        });
-
-        // Navbar scroll effect
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-        });
-    </script>
+    <script src="js/site.js"></script>
 </body>
 </html>

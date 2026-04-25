@@ -2,384 +2,191 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Pricing - Bellevue Ranch House</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="View room pricing and options at Bellevue Ranch House - affordable student housing near UC Merced.">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'ucm-blue': '#002856',
-                        'ucm-gold': '#F2A900',
-                        'ucm-blue-light': '#003366',
-                        'ucm-blue-dark': '#001a3d',
-                        'ucm-gold-light': '#ffbe33',
-                        'ucm-gold-dark': '#cc8800',
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'display': ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        html { scroll-behavior: smooth; }
-
-        .glass-nav {
-            background: rgba(0, 40, 86, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #F2A900 0%, #ffbe33 50%, #cc8800 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #F2A900 0%, #cc8800 100%);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px -10px rgba(242, 169, 0, 0.5);
-        }
-
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #F2A900, #cc8800);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .pricing-card {
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .popular-badge {
-            background: linear-gradient(135deg, #F2A900 0%, #cc8800 100%);
-        }
-    </style>
+    <title>Rooms & Pricing | Bellevue Ranch House</title>
+    <meta name="description" content="See room options and monthly pricing for Bellevue Ranch House student housing near UC Merced.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A1%3C/text%3E%3C/svg%3E">
 </head>
-
-<body class="font-sans antialiased bg-gray-50">
-    <!-- Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-3 group">
-                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full ring-2 ring-ucm-gold/50 group-hover:ring-ucm-gold transition-all" loading="lazy">
-                    <span class="text-white text-xl font-semibold tracking-tight">Bellevue Ranch</span>
-                </a>
-
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">About</a>
-                    <a href="photos.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Photos</a>
-                    <a href="pricing.html" class="nav-link text-ucm-gold font-medium">Pricing</a>
-                    <a href="faqs.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">FAQs</a>
-                    <a href="apply.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Apply</a>
-                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-2.5 px-6 rounded-full">
-                        Contact Us
-                    </a>
-                </div>
-
-                <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
+<body>
+    <header class="site-header" data-header>
+        <nav class="site-nav container" aria-label="Primary navigation">
+            <a class="brand" href="index.html">
+                <img class="brand-mark" src="img/bellevue-ranch-mark.jpg" alt="Bellevue Ranch logo" loading="lazy">
+                <span class="brand-copy">
+                    <span class="brand-title">Bellevue Ranch House</span>
+                    <span class="brand-sub">Near UC Merced</span>
+                </span>
+            </a>
+            <div class="nav-links">
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="photos.html">Photos</a>
+                <a class="nav-link" href="pricing.html" aria-current="page">Pricing</a>
+                <a class="nav-link" href="faqs.html">FAQs</a>
+                <a class="nav-link" href="apply.html">Apply</a>
+                <a class="btn btn-primary" href="contact.html">Contact</a>
             </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">About</a>
-                    <a href="photos.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Photos</a>
-                    <a href="pricing.html" class="text-ucm-gold font-medium py-2">Pricing</a>
-                    <a href="faqs.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">FAQs</a>
-                    <a href="apply.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Apply</a>
-                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-3 px-6 rounded-full text-center mt-2">
-                        Contact Us
-                    </a>
-                </div>
-            </div>
+            <button class="menu-button" data-menu-toggle aria-expanded="false" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
         </nav>
+        <div class="mobile-menu container" data-menu>
+            <div class="mobile-menu-inner">
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="photos.html">Photos</a>
+                <a class="nav-link" href="pricing.html" aria-current="page">Pricing</a>
+                <a class="nav-link" href="faqs.html">FAQs</a>
+                <a class="nav-link" href="apply.html">Apply</a>
+                <a class="btn btn-primary" href="contact.html">Contact</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-16 bg-gradient-to-br from-ucm-blue-dark via-ucm-blue to-ucm-blue-dark">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto">
-                <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-                    Rooms & <span class="text-gradient">Pricing</span>
-                </h1>
-                <p class="text-xl text-gray-300 leading-relaxed">
-                    Transparent pricing with no hidden fees. Find the perfect room for your needs.
-                </p>
+    <main>
+        <section class="page-hero slim">
+            <div class="container reveal">
+                <p class="eyebrow">Simple & Transparent</p>
+                <h1 class="section-title">Room pricing built for student budgets</h1>
+                <p class="page-subtitle">Choose from regular and master options. Utilities are split equally among tenants for straightforward monthly planning.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing Section -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-                <!-- Regular Bedroom -->
-                <div class="pricing-card bg-white rounded-2xl shadow-xl overflow-hidden">
-                    <div class="bg-gradient-to-r from-ucm-blue to-ucm-blue-light p-6 text-center">
-                        <h3 class="text-2xl font-bold text-white">Regular Bedroom</h3>
-                        <p class="text-blue-100 mt-1">4 Available</p>
-                    </div>
-                    <div class="p-8">
-                        <div class="text-center mb-8">
-                            <div class="flex items-baseline justify-center">
-                                <span class="text-5xl font-bold text-gray-900">$500</span>
-                                <span class="text-gray-500 ml-2">/month</span>
-                            </div>
-                            <p class="text-gray-500 mt-2">+ utilities</p>
+        <section class="section section-tight">
+            <div class="container">
+                <div class="pricing-grid">
+                    <article class="plan reveal">
+                        <span class="badge">Standard</span>
+                        <h3>Regular Bedroom</h3>
+                        <p class="plan-sub">4 rooms available</p>
+                        <div class="price">
+                            <strong>$500</strong>
+                            <span>/month + utilities</span>
                         </div>
-
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Spacious Closet</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Shared Bathroom</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">In-house Washer & Dryer</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Full Kitchen Access</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">1-Year Lease</span>
-                            </li>
+                        <ul class="feature-list with-space">
+                            <li>Private room layout</li>
+                            <li>Shared bathroom access</li>
+                            <li>Kitchen + laundry access</li>
+                            <li>1-year lease term</li>
                         </ul>
-
-                        <a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry - Regular Room" class="block w-full bg-ucm-blue hover:bg-ucm-blue-light text-white font-semibold py-4 px-6 rounded-xl text-center transition-colors">
-                            Inquire Now
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Master Bedroom - Popular -->
-                <div class="pricing-card bg-white rounded-2xl shadow-2xl overflow-hidden relative transform md:scale-105">
-                    <div class="popular-badge absolute top-4 right-4 text-ucm-blue-dark text-xs font-bold px-3 py-1 rounded-full">
-                        POPULAR
-                    </div>
-                    <div class="bg-gradient-to-r from-ucm-gold to-ucm-gold-light p-6 text-center">
-                        <h3 class="text-2xl font-bold text-ucm-blue-dark">Master Bedroom</h3>
-                        <p class="text-ucm-blue/80 mt-1">2 Available, Single Occupancy</p>
-                    </div>
-                    <div class="p-8">
-                        <div class="text-center mb-8">
-                            <div class="flex items-baseline justify-center">
-                                <span class="text-5xl font-bold text-gray-900">$750</span>
-                                <span class="text-gray-500 ml-2">/month</span>
-                            </div>
-                            <p class="text-gray-500 mt-2">+ utilities</p>
+                        <div class="button-row card-actions">
+                            <a class="btn btn-secondary" href="apply.html">Apply For This Room</a>
                         </div>
+                    </article>
 
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Large Walk-in Closet</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700 font-semibold">Private Bathroom</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">In-house Washer & Dryer</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Full Kitchen Access</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">1-Year Lease</span>
-                            </li>
-                        </ul>
-
-                        <a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry - Master Room" class="block w-full bg-ucm-gold hover:bg-ucm-gold-light text-ucm-blue-dark font-semibold py-4 px-6 rounded-xl text-center transition-colors">
-                            Inquire Now
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Utilities -->
-                <div class="pricing-card bg-white rounded-2xl shadow-xl overflow-hidden">
-                    <div class="bg-gradient-to-r from-ucm-blue-light to-ucm-blue p-6 text-center">
-                        <h3 class="text-2xl font-bold text-white">Utilities</h3>
-                        <p class="text-blue-100 mt-1">Split Among Tenants</p>
-                    </div>
-                    <div class="p-8">
-                        <div class="text-center mb-8">
-                            <div class="flex items-baseline justify-center">
-                                <span class="text-3xl font-bold text-gray-900">~$60</span>
-                                <span class="text-gray-500 ml-2">/month</span>
-                            </div>
-                            <p class="text-gray-500 mt-2">Estimated average</p>
+                    <article class="plan popular reveal delay-1">
+                        <span class="badge popular">Most Requested</span>
+                        <h3>Master Bedroom (Single)</h3>
+                        <p class="plan-sub">2 rooms available</p>
+                        <div class="price">
+                            <strong>$800</strong>
+                            <span>/month + utilities</span>
                         </div>
-
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
-                                </svg>
-                                <span class="text-gray-700">Comcast Internet</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
-                                </svg>
-                                <span class="text-gray-700">PG&E (Gas)</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                                </svg>
-                                <span class="text-gray-700">MID (Electric)</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-ucm-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                                </svg>
-                                <span class="text-gray-700">Water & Garbage</span>
-                            </li>
+                        <ul class="feature-list with-space">
+                            <li>Larger room footprint</li>
+                            <li>Private bathroom</li>
+                            <li>Large closet space</li>
+                            <li>Single occupancy only</li>
                         </ul>
+                        <div class="button-row card-actions">
+                            <a class="btn btn-primary" href="apply.html">Apply For Master</a>
+                        </div>
+                    </article>
 
-                        <a href="contact.html" class="block w-full bg-ucm-blue hover:bg-ucm-blue-light text-white font-semibold py-4 px-6 rounded-xl text-center transition-colors">
-                            Contact for Details
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Additional Info -->
-            <div class="mt-16 max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
-                <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">What's Due at Signing?</h3>
-                <div class="grid md:grid-cols-3 gap-6 text-center">
-                    <div class="p-4">
-                        <div class="text-3xl font-bold text-ucm-gold mb-2">1st Month</div>
-                        <p class="text-gray-600">Rent payment</p>
-                    </div>
-                    <div class="p-4">
-                        <div class="text-3xl font-bold text-ucm-gold mb-2">Last Month</div>
-                        <p class="text-gray-600">Rent payment</p>
-                    </div>
-                    <div class="p-4">
-                        <div class="text-3xl font-bold text-ucm-gold mb-2">Security</div>
-                        <p class="text-gray-600">Refundable deposit</p>
-                    </div>
-                </div>
-                <p class="text-center text-gray-500 mt-6">
-                    Have questions? Check out our <a href="faqs.html" class="text-ucm-blue hover:underline font-medium">FAQs</a> or <a href="contact.html" class="text-ucm-blue hover:underline font-medium">contact us</a>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-ucm-blue-dark py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-3 mb-6 md:mb-0">
-                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full" loading="lazy">
-                    <span class="text-white font-semibold">Bellevue Ranch House</span>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
-                    <a href="index.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-400 hover:text-ucm-gold transition-colors">About</a>
-                    <a href="photos.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Photos</a>
-                    <a href="pricing.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Pricing</a>
-                    <a href="contact.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Contact</a>
-                    <a href="faqs.html" class="text-gray-400 hover:text-ucm-gold transition-colors">FAQs</a>
+                    <article class="plan reveal delay-2">
+                        <span class="badge">Shared Option</span>
+                        <h3>Master Bedroom (Shared)</h3>
+                        <p class="plan-sub">1 room can be shared</p>
+                        <div class="price">
+                            <strong>$550</strong>
+                            <span>/person + utilities</span>
+                        </div>
+                        <ul class="feature-list with-space">
+                            <li>Master room split between 2</li>
+                            <li>Private attached bathroom</li>
+                            <li>Good fit for close friends</li>
+                            <li>Cost-efficient premium space</li>
+                        </ul>
+                        <div class="button-row card-actions">
+                            <a class="btn btn-secondary" href="apply.html">Apply For Shared Master</a>
+                        </div>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <div class="border-t border-ucm-blue mt-8 pt-8 text-center">
-                <p class="text-gray-500 text-sm">&copy; 2025 Bellevue Ranch House. All Rights Reserved.</p>
+        <section class="section section-tight">
+            <div class="container split">
+                <article class="surface-band reveal">
+                    <header class="section-head compact">
+                        <p class="eyebrow">Monthly Planning</p>
+                        <h2 class="section-title">Estimate your expected total</h2>
+                    </header>
+                    <ul class="feature-list">
+                        <li>Room rent is fixed by room type</li>
+                        <li>Utilities are shared equally among tenants</li>
+                        <li>Budget buffer recommended for seasonal usage changes</li>
+                        <li>Ask us for current occupancy and estimated utility splits</li>
+                    </ul>
+                </article>
+
+                <article class="surface-band reveal delay-1">
+                    <header class="section-head compact">
+                        <p class="eyebrow">What Is Included</p>
+                        <h2 class="section-title">Core housing benefits</h2>
+                    </header>
+                    <ul class="feature-list">
+                        <li>Private room assignment according to lease</li>
+                        <li>Common area and kitchen access</li>
+                        <li>In-house washer and dryer use</li>
+                        <li>Student-oriented lease terms</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="container">
+                <section class="cta-band reveal">
+                    <h3>Need help picking the best room option?</h3>
+                    <p>Tell us your budget and roommate preferences and we can suggest the best current fit.</p>
+                    <div class="button-row">
+                        <a class="btn btn-primary" href="contact.html">Talk With Us</a>
+                        <a class="btn btn-soft" href="faqs.html">Read FAQs</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-shell">
+            <div class="footer-top">
+                <a class="brand" href="index.html">
+                    <img class="brand-mark" src="img/bellevue-ranch-mark.jpg" alt="Bellevue Ranch logo" loading="lazy">
+                    <span class="brand-copy">
+                        <span class="brand-title">Bellevue Ranch House</span>
+                        <span class="brand-sub">Built for UC Merced students</span>
+                    </span>
+                </a>
+                <nav class="footer-links" aria-label="Footer links">
+                    <a href="about.html">About</a>
+                    <a href="photos.html">Photos</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="faqs.html">FAQs</a>
+                    <a href="apply.html">Apply</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span data-current-year></span> Bellevue Ranch House. All rights reserved.</span>
+                <span>Merced, California</span>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-            } else {
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-            }
-        });
-    </script>
+    <script src="js/site.js"></script>
 </body>
 </html>

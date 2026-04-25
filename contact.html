@@ -2,298 +2,176 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Contact - Bellevue Ranch House</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Bellevue Ranch House for rental inquiries or download application forms.">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'ucm-blue': '#002856',
-                        'ucm-gold': '#F2A900',
-                        'ucm-blue-light': '#003366',
-                        'ucm-blue-dark': '#001a3d',
-                        'ucm-gold-light': '#ffbe33',
-                        'ucm-gold-dark': '#cc8800',
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'display': ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        html { scroll-behavior: smooth; }
-
-        .glass-nav {
-            background: rgba(0, 40, 86, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #F2A900 0%, #ffbe33 50%, #cc8800 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #F2A900 0%, #cc8800 100%);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px -10px rgba(242, 169, 0, 0.5);
-        }
-
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #F2A900, #cc8800);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .contact-card {
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-4px);
-        }
-    </style>
+    <title>Contact | Bellevue Ranch House</title>
+    <meta name="description" content="Contact Bellevue Ranch House for rental availability, tours, and student housing questions near UC Merced.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A1%3C/text%3E%3C/svg%3E">
 </head>
-
-<body class="font-sans antialiased bg-gray-50">
-    <!-- Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-3 group">
-                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full ring-2 ring-ucm-gold/50 group-hover:ring-ucm-gold transition-all" loading="lazy">
-                    <span class="text-white text-xl font-semibold tracking-tight">Bellevue Ranch</span>
-                </a>
-
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">About</a>
-                    <a href="photos.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Photos</a>
-                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Pricing</a>
-                    <a href="faqs.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">FAQs</a>
-                    <a href="apply.html" class="nav-link text-gray-300 hover:text-white transition-colors font-medium">Apply</a>
-                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-2.5 px-6 rounded-full">
-                        Contact Us
-                    </a>
-                </div>
-
-                <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
+<body>
+    <header class="site-header" data-header>
+        <nav class="site-nav container" aria-label="Primary navigation">
+            <a class="brand" href="index.html">
+                <img class="brand-mark" src="img/bellevue-ranch-mark.jpg" alt="Bellevue Ranch logo" loading="lazy">
+                <span class="brand-copy">
+                    <span class="brand-title">Bellevue Ranch House</span>
+                    <span class="brand-sub">Near UC Merced</span>
+                </span>
+            </a>
+            <div class="nav-links">
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="photos.html">Photos</a>
+                <a class="nav-link" href="pricing.html">Pricing</a>
+                <a class="nav-link" href="faqs.html">FAQs</a>
+                <a class="nav-link" href="apply.html">Apply</a>
+                <a class="btn btn-primary" href="contact.html" aria-current="page">Contact</a>
             </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">About</a>
-                    <a href="photos.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Photos</a>
-                    <a href="pricing.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Pricing</a>
-                    <a href="faqs.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">FAQs</a>
-                    <a href="apply.html" class="text-gray-300 hover:text-white transition-colors font-medium py-2">Apply</a>
-                    <a href="contact.html" class="btn-primary text-ucm-blue-dark font-semibold py-3 px-6 rounded-full text-center mt-2">
-                        Contact Us
-                    </a>
-                </div>
-            </div>
+            <button class="menu-button" data-menu-toggle aria-expanded="false" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
         </nav>
+        <div class="mobile-menu container" data-menu>
+            <div class="mobile-menu-inner">
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="photos.html">Photos</a>
+                <a class="nav-link" href="pricing.html">Pricing</a>
+                <a class="nav-link" href="faqs.html">FAQs</a>
+                <a class="nav-link" href="apply.html">Apply</a>
+                <a class="btn btn-primary" href="contact.html" aria-current="page">Contact</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-16 bg-gradient-to-br from-ucm-blue-dark via-ucm-blue to-ucm-blue-dark">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto">
-                <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-                    Get In <span class="text-gradient">Touch</span>
-                </h1>
-                <p class="text-xl text-gray-300 leading-relaxed">
-                    Have questions or ready to apply? We'd love to hear from you.
-                </p>
+    <main>
+        <section class="page-hero slim">
+            <div class="container reveal">
+                <p class="eyebrow">Reach Out</p>
+                <h1 class="section-title">Questions, tours, and next-step support</h1>
+                <p class="page-subtitle">If you are interested in renting near UC Merced, contact us and we can guide you through room availability, tour coordination, and lease steps.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8">
+        <section class="section section-tight">
+            <div class="container">
+                <div class="contact-grid">
+                    <article class="contact-card reveal">
+                        <h3>Email the landlord</h3>
+                        <small>Fastest way to ask questions and receive updates.</small>
+                        <p class="muted-text">bellevueranchhouse@gmail.com</p>
+                        <a class="btn btn-primary" href="mailto:bellevueranchhouse@gmail.com?subject=Housing Inquiry - UC Merced">Email Now</a>
+                    </article>
 
-                    <!-- Email Contact -->
-                    <a href="mailto:bellevueranchhouse@gmail.com?subject=Rental Inquiry" class="contact-card bg-white rounded-2xl shadow-xl p-8 text-center group">
-                        <div class="w-16 h-16 bg-ucm-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-ucm-blue transition-colors">
-                            <svg class="w-8 h-8 text-ucm-blue group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
+                    <article class="contact-card reveal delay-1">
+                        <h3>Submit your application</h3>
+                        <small>Start online and we will follow up with next steps.</small>
+                        <p class="muted-text">Preferred for serious inquiries</p>
+                        <a class="btn btn-secondary" href="apply.html">Open Application</a>
+                    </article>
+
+                    <article class="contact-card reveal delay-2">
+                        <h3>Helpful docs</h3>
+                        <small>PDF resources for planning and move prep.</small>
+                        <p class="muted-text">Checklist + printable forms</p>
+                        <div class="button-row compact-actions">
+                            <a class="btn btn-soft" href="docs/move_checklist.pdf" target="_blank" rel="noopener">Move Checklist</a>
+                            <a class="btn btn-soft" href="docs/rental_application_v2.pdf" target="_blank" rel="noopener">PDF Application</a>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
-                        <p class="text-gray-600 mb-4">Send us an inquiry</p>
-                        <span class="inline-flex items-center text-ucm-blue font-semibold group-hover:text-ucm-blue-light">
-                            Contact via Email
-                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
-                        </span>
-                    </a>
-
-                    <!-- Rental Application -->
-                    <a href="apply.html" class="contact-card bg-white rounded-2xl shadow-xl p-8 text-center group">
-                        <div class="w-16 h-16 bg-ucm-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-ucm-gold transition-colors">
-                            <svg class="w-8 h-8 text-ucm-gold group-hover:text-ucm-blue-dark transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Rental Application</h3>
-                        <p class="text-gray-600 mb-4">Apply online now</p>
-                        <span class="inline-flex items-center text-ucm-gold-dark font-semibold group-hover:text-ucm-gold">
-                            Apply Online
-                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
-                        </span>
-                    </a>
-
-                    <!-- Move Checklist -->
-                    <a href="docs/move_checklist.pdf" class="contact-card bg-white rounded-2xl shadow-xl p-8 text-center group">
-                        <div class="w-16 h-16 bg-ucm-blue-light/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-ucm-blue-light transition-colors">
-                            <svg class="w-8 h-8 text-ucm-blue-light group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Move Checklist</h3>
-                        <p class="text-gray-600 mb-4">In/Out checklist</p>
-                        <span class="inline-flex items-center text-ucm-blue-light font-semibold group-hover:text-ucm-blue">
-                            Download PDF
-                            <svg class="w-4 h-4 ml-2 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                            </svg>
-                        </span>
-                    </a>
-
+                    </article>
                 </div>
+            </div>
+        </section>
 
-                <!-- Additional Info -->
-                <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 text-center">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Application Process</h3>
-                    <div class="grid md:grid-cols-4 gap-8 mt-8">
-                        <div class="relative">
-                            <div class="w-12 h-12 bg-ucm-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-ucm-gold-dark font-bold text-lg">1</span>
+        <section class="section section-tight">
+            <div class="container split">
+                <article class="surface-band reveal">
+                    <header class="section-head compact">
+                        <p class="eyebrow">Expected Timeline</p>
+                        <h2 class="section-title">Typical application flow</h2>
+                    </header>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <span class="step-no">1</span>
+                            <div class="step-copy">
+                                <strong>Apply online</strong>
+                                <p>Share renter details, move-in window, and preferred room type.</p>
                             </div>
-                            <h4 class="font-semibold text-gray-900 mb-2">Submit Application</h4>
-                            <p class="text-gray-600 text-sm">Fill out the online rental application</p>
                         </div>
-                        <div class="relative">
-                            <div class="w-12 h-12 bg-ucm-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-ucm-gold-dark font-bold text-lg">2</span>
+                        <div class="timeline-step">
+                            <span class="step-no">2</span>
+                            <div class="step-copy">
+                                <strong>Tour coordination</strong>
+                                <p>We schedule a walkthrough around current tenant and availability constraints.</p>
                             </div>
-                            <h4 class="font-semibold text-gray-900 mb-2">Schedule Viewing</h4>
-                            <p class="text-gray-600 text-sm">We'll coordinate a time to see the house</p>
                         </div>
-                        <div class="relative">
-                            <div class="w-12 h-12 bg-ucm-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-ucm-gold-dark font-bold text-lg">3</span>
+                        <div class="timeline-step">
+                            <span class="step-no">3</span>
+                            <div class="step-copy">
+                                <strong>Screening + lease</strong>
+                                <p>MySmartMove background review, then lease and move-in planning.</p>
                             </div>
-                            <h4 class="font-semibold text-gray-900 mb-2">Background Check</h4>
-                            <p class="text-gray-600 text-sm">Complete the MySmartMove verification</p>
-                        </div>
-                        <div class="relative">
-                            <div class="w-12 h-12 bg-ucm-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-ucm-gold-dark font-bold text-lg">4</span>
-                            </div>
-                            <h4 class="font-semibold text-gray-900 mb-2">Sign & Move In</h4>
-                            <p class="text-gray-600 text-sm">Sign the lease and get your keys</p>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <!-- FAQ Link -->
-                <div class="mt-12 text-center">
-                    <p class="text-gray-600 mb-4">Have more questions?</p>
-                    <a href="faqs.html" class="inline-flex items-center text-ucm-blue hover:text-ucm-blue-light font-semibold">
-                        Check out our FAQs
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-ucm-blue-dark py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-3 mb-6 md:mb-0">
-                    <img src="img/bellevue_ranch.png" alt="Bellevue Ranch House" class="h-10 w-10 rounded-full" loading="lazy">
-                    <span class="text-white font-semibold">Bellevue Ranch House</span>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
-                    <a href="index.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-400 hover:text-ucm-gold transition-colors">About</a>
-                    <a href="photos.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Photos</a>
-                    <a href="pricing.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Pricing</a>
-                    <a href="contact.html" class="text-gray-400 hover:text-ucm-gold transition-colors">Contact</a>
-                    <a href="faqs.html" class="text-gray-400 hover:text-ucm-gold transition-colors">FAQs</a>
-                </div>
+                <article class="surface-band reveal delay-1">
+                    <header class="section-head compact">
+                        <p class="eyebrow">Before You Reach Out</p>
+                        <h2 class="section-title">Best info to include</h2>
+                    </header>
+                    <ul class="feature-list">
+                        <li>Desired move-in month</li>
+                        <li>Preferred room type and budget range</li>
+                        <li>Whether you are applying solo or with roommate(s)</li>
+                        <li>Your UC Merced year/program (optional)</li>
+                        <li>Best phone and email for follow-up</li>
+                    </ul>
+                </article>
             </div>
 
-            <div class="border-t border-ucm-blue mt-8 pt-8 text-center">
-                <p class="text-gray-500 text-sm">&copy; 2025 Bellevue Ranch House. All Rights Reserved.</p>
+            <div class="container">
+                <section class="cta-band reveal">
+                    <h3>Ready to move forward?</h3>
+                    <p>Submit your application now so we can prioritize your tour and room matching.</p>
+                    <div class="button-row">
+                        <a class="btn btn-primary" href="apply.html">Start Application</a>
+                        <a class="btn btn-soft" href="pricing.html">Review Pricing</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-shell">
+            <div class="footer-top">
+                <a class="brand" href="index.html">
+                    <img class="brand-mark" src="img/bellevue-ranch-mark.jpg" alt="Bellevue Ranch logo" loading="lazy">
+                    <span class="brand-copy">
+                        <span class="brand-title">Bellevue Ranch House</span>
+                        <span class="brand-sub">Built for UC Merced students</span>
+                    </span>
+                </a>
+                <nav class="footer-links" aria-label="Footer links">
+                    <a href="about.html">About</a>
+                    <a href="photos.html">Photos</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="faqs.html">FAQs</a>
+                    <a href="apply.html">Apply</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span data-current-year></span> Bellevue Ranch House. All rights reserved.</span>
+                <span>Merced, California</span>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-            } else {
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-            }
-        });
-    </script>
+    <script src="js/site.js"></script>
 </body>
 </html>
