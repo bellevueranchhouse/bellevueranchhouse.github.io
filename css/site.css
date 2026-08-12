@@ -716,6 +716,120 @@ textarea {
     box-shadow: var(--shadow-md);
 }
 
+.transit-section {
+    background: linear-gradient(180deg, rgba(224, 236, 231, 0.42), rgba(255, 255, 255, 0));
+}
+
+.transit-visual {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    background: var(--paper);
+    box-shadow: var(--shadow-md);
+}
+
+.transit-visual img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.transit-visual figcaption {
+    padding: 0.8rem 1rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.transit-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 0.75rem;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.transit-flow-step {
+    display: grid;
+    gap: 0.25rem;
+    min-height: 132px;
+    align-content: center;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--paper);
+    text-align: center;
+}
+
+.transit-flow-step .step-no {
+    margin-inline: auto;
+}
+
+.transit-flow-step span:last-child {
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.transit-arrow {
+    color: var(--sage);
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.route-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.route-card {
+    position: relative;
+    display: grid;
+    gap: 0.45rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--paper);
+}
+
+.route-card h3 {
+    font-size: 1rem;
+}
+
+.route-card p,
+.route-card > span:last-child {
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.route-dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(49, 95, 85, 0.1);
+}
+
+.route-blue { background: #1f5c8a; }
+.route-gold { background: #d5a31f; }
+
+.route-note {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--paper-warm);
+}
+
+.route-note h3 {
+    margin-bottom: 0.4rem;
+}
+
+.route-note p,
+.route-note small {
+    color: var(--muted);
+}
+
 .gallery-item {
     position: relative;
     border-radius: var(--radius-lg);
@@ -1146,6 +1260,10 @@ form > .form-shell + .form-shell {
 }
 
 @media (max-width: 1024px) {
+    .route-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .info-grid,
     .pricing-grid,
     .contact-grid,
@@ -1189,6 +1307,19 @@ form > .form-shell + .form-shell {
 
 @media (max-width: 700px) {
     .tour-video {
+        grid-template-columns: 1fr;
+    }
+
+    .transit-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .transit-arrow {
+        transform: rotate(90deg);
+        justify-self: center;
+    }
+
+    .route-grid {
         grid-template-columns: 1fr;
     }
 
