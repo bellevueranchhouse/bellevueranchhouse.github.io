@@ -684,6 +684,38 @@ textarea {
     gap: 1rem;
 }
 
+.tour-video {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.tour-video-copy .section-title {
+    margin-bottom: 0.75rem;
+}
+
+.tour-video-copy p:last-child {
+    color: var(--muted);
+    max-width: 58ch;
+}
+
+.tour-video video {
+    display: block;
+    width: min(100%, 360px);
+    max-height: 640px;
+    justify-self: center;
+    border-radius: var(--radius-lg);
+    background: #111;
+    box-shadow: var(--shadow-md);
+}
+
 .gallery-item {
     position: relative;
     border-radius: var(--radius-lg);
@@ -1156,6 +1188,10 @@ form > .form-shell + .form-shell {
 }
 
 @media (max-width: 700px) {
+    .tour-video {
+        grid-template-columns: 1fr;
+    }
+
     .container {
         width: min(100% - 1.5rem, var(--max-width));
     }
