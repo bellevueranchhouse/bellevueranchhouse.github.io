@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /apply-success.html
+
+Sitemap: https://www.bellevueranchhouse.com/sitemap.xml

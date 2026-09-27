@@ -1,202 +1,426 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bellevue Ranch House | Student Housing Near UC Merced</title>
-    <meta name="description" content="Bellevue Ranch House offers off-campus housing near UC Merced with student-friendly pricing, study-focused living, and easy CatTracks access.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A1%3C/text%3E%3C/svg%3E">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bellevue Ranch House | Student Rooms from $500 Near UC Merced</title>
+    <meta
+      name="description"
+      content="A room of your own near UC Merced. Regular bedrooms $500/month and master bedrooms $750/month, plus utilities. Explore the house and apply online."
+    />
+    <meta name="theme-color" content="#173b31" />
+    <link rel="canonical" href="https://www.bellevueranchhouse.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bellevue Ranch House" />
+    <meta property="og:title" content="Bellevue Ranch House | Student Rooms from $500 Near UC Merced" />
+    <meta property="og:description" content="A room of your own near UC Merced. Regular bedrooms $500/month and master bedrooms $750/month, plus utilities. Explore the house and apply online." />
+    <meta property="og:url" content="https://www.bellevueranchhouse.com/" />
+    <meta property="og:image" content="https://www.bellevueranchhouse.com/img/social-card.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bellevue Ranch House: private rooms near UC Merced from $500 a month" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <script src="js/site.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Bellevue Ranch House",
+        "description": "Private bedrooms in a shared house in the Bellevue Ranch neighborhood of Merced, CA, for UC Merced students.",
+        "url": "https://www.bellevueranchhouse.com/",
+        "image": "https://www.bellevueranchhouse.com/img/social-card.jpg",
+        "email": "bellevueranchhouse@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Merced",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Shared kitchen", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "In-home washer and dryer", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Backyard", "value": true }
+        ],
+        "petsAllowed": false,
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "Regular bedroom",
+            "description": "Private bedroom with shared bathroom. Utilities are separate.",
+            "priceSpecification": { "@type": "UnitPriceSpecification", "price": 500, "priceCurrency": "USD", "unitCode": "MON" }
+          },
+          {
+            "@type": "Offer",
+            "name": "Master bedroom",
+            "description": "Larger private bedroom with private bathroom. Utilities are separate.",
+            "priceSpecification": { "@type": "UnitPriceSpecification", "price": 750, "priceCurrency": "USD", "unitCode": "MON" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
-        <nav class="site-nav container" aria-label="Primary navigation">
-            <a class="brand" href="index.html">
-                <img class="brand-mark" src="img/bellevue-ranch-mark.jpg" alt="Bellevue Ranch logo" loading="lazy">
-                <span class="brand-copy">
-                    <span class="brand-title">Bellevue Ranch House</span>
-                    <span class="brand-sub">Near UC Merced</span>
-                </span>
-            </a>
-            <div class="nav-links">
-                <a class="nav-link" href="about.html">About</a>
-                <a class="nav-link" href="photos.html">Photos</a>
-                <a class="nav-link" href="pricing.html">Pricing</a>
-                <a class="nav-link" href="faqs.html">FAQs</a>
-                <a class="nav-link" href="apply.html">Apply</a>
-                <a class="btn btn-primary" href="contact.html">Contact</a>
-            </div>
-            <button class="menu-button" data-menu-toggle aria-expanded="false" aria-label="Toggle menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </button>
+      <div class="container nav-shell">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Bellevue Ranch House home"
+          ><span class="brand-symbol" aria-hidden="true">b<span>r.</span></span
+          ><span class="brand-name"
+            >Bellevue Ranch<span>HOUSE · MERCED, CA</span></span
+          ></a
+        >
+        <button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-menu"
+          data-menu-toggle
+        >
+          Menu <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="site-menu" class="site-menu" aria-label="Main navigation">
+          <a href="about.html">The house</a><a href="photos.html">Photos</a
+          ><a href="pricing.html">Rooms & pricing</a><a href="faqs.html">FAQs</a
+          ><a class="nav-contact" href="contact.html">Contact</a
+          ><a class="btn btn-small" href="apply.html"
+            >Apply now <span aria-hidden="true">↗</span></a
+          >
         </nav>
-        <div class="mobile-menu container" data-menu>
-            <div class="mobile-menu-inner">
-                <a class="nav-link" href="about.html">About</a>
-                <a class="nav-link" href="photos.html">Photos</a>
-                <a class="nav-link" href="pricing.html">Pricing</a>
-                <a class="nav-link" href="faqs.html">FAQs</a>
-                <a class="nav-link" href="apply.html">Apply</a>
-                <a class="btn btn-primary" href="contact.html">Contact</a>
-            </div>
-        </div>
+      </div>
     </header>
-
-    <main>
-        <section class="page-hero with-image">
-            <div class="container hero-grid">
-                <div class="reveal">
-                    <span class="hero-eyebrow">Now Leasing for 2026-2027</span>
-                    <h1 class="hero-title">Live Close. Study Better. <span class="accent-text">Feel At Home.</span></h1>
-                    <p class="hero-lead">
-                        Bellevue Ranch House is built for UC Merced students who want a clean, quiet, and reliable place to live while balancing class, labs, and campus life.
-                    </p>
-                    <div class="button-row">
-                        <a class="btn btn-primary" href="pricing.html">View Rooms & Pricing</a>
-                        <a class="btn btn-secondary" href="photos.html">Tour the House</a>
-                    </div>
-                    <div class="kpi-strip">
-                        <article class="kpi-card">
-                            <strong>~3.1 mi</strong>
-                            <span>to UC Merced campus</span>
-                        </article>
-                        <article class="kpi-card">
-                            <strong>2-3 min walk</strong>
-                            <span>to CatTracks stop</span>
-                        </article>
-                        <article class="kpi-card">
-                            <strong>From $500/mo</strong>
-                            <span>student-friendly pricing</span>
-                        </article>
-                    </div>
-                </div>
-                <figure class="hero-visual reveal delay-2">
-                    <img src="img/bvr-hero.jpg" alt="Bellevue Ranch House exterior">
-                    <figcaption class="hero-visual-note">
-                        <strong>Student-focused housing</strong>
-                        <span>Spacious common areas, practical room options, and a respectful roommate atmosphere.</span>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <header class="section-head reveal">
-                    <p class="eyebrow">Why Students Choose It</p>
-                    <h2 class="section-title">A setup designed for your semester rhythm</h2>
-                    <p class="section-copy">The house is structured around everyday student needs: reliable commute, predictable monthly costs, comfortable private space, and a chill shared environment.</p>
-                </header>
-                <div class="info-grid">
-                    <article class="card reveal">
-                        <div class="icon-token">01</div>
-                        <h3>Commute Advantage</h3>
-                        <p>Quick bus and drive access means less time in traffic and more time for classes, office hours, and group projects.</p>
-                    </article>
-                    <article class="card reveal delay-1">
-                        <div class="icon-token">02</div>
-                        <h3>Study-Friendly Culture</h3>
-                        <p>Quiet-hours expectations and respectful roommates help you focus during midterms, finals, and late-night assignment crunches.</p>
-                    </article>
-                    <article class="card reveal delay-2">
-                        <div class="icon-token">03</div>
-                        <h3>Clear Cost Structure</h3>
-                        <p>Simple room tiers and transparent utility sharing make budgeting easier for students and families.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container split">
-                <article class="surface-band reveal">
-                    <header class="section-head compact">
-                        <p class="eyebrow">Included Value</p>
-                        <h2 class="section-title">What comes with your rent</h2>
-                    </header>
-                    <ul class="feature-list">
-                        <li>Private bedroom options with practical layouts</li>
-                        <li>In-home washer and dryer access</li>
-                        <li>Shared kitchen and common spaces</li>
-                        <li>Roommate environment geared toward students</li>
-                        <li>Annual lease structure for academic stability</li>
-                    </ul>
-                </article>
-                <article class="surface-band reveal delay-1">
-                    <header class="section-head compact">
-                        <p class="eyebrow">Fast Application Flow</p>
-                        <h2 class="section-title">From interest to move-in</h2>
-                    </header>
-                    <div class="timeline">
-                        <div class="timeline-step">
-                            <span class="step-no">1</span>
-                            <div class="step-copy">
-                                <strong>Submit your application</strong>
-                                <p>Fill out the online form with renter and guarantor details.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-step">
-                            <span class="step-no">2</span>
-                            <div class="step-copy">
-                                <strong>Schedule a tour</strong>
-                                <p>See the home and confirm room fit before final steps.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-step">
-                            <span class="step-no">3</span>
-                            <div class="step-copy">
-                                <strong>Complete screening + lease</strong>
-                                <p>Finalize background check, lease, and move-in timeline.</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="container">
-                <section class="cta-band reveal">
-                    <h3>Want to lock in housing before the rush?</h3>
-                    <p>Rooms fill quickly ahead of each academic year. Reach out now and secure your best-fit room early.</p>
-                    <div class="button-row">
-                        <a class="btn btn-primary" href="apply.html">Start Application</a>
-                        <a class="btn btn-soft" href="contact.html">Ask Questions</a>
-                    </div>
-                </section>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-shell">
-            <div class="footer-top">
-                <a class="brand" href="index.html">
-                    <img class="brand-mark" src="img/bellevue-ranch-mark.jpg" alt="Bellevue Ranch logo" loading="lazy">
-                    <span class="brand-copy">
-                        <span class="brand-title">Bellevue Ranch House</span>
-                        <span class="brand-sub">Built for UC Merced students</span>
-                    </span>
-                </a>
-                <nav class="footer-links" aria-label="Footer links">
-                    <a href="about.html">About</a>
-                    <a href="photos.html">Photos</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="faqs.html">FAQs</a>
-                    <a href="apply.html">Apply</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; <span data-current-year></span> Bellevue Ranch House. All rights reserved.</span>
-                <span>Merced, California</span>
-            </div>
+    <main id="main">
+      <section class="home-hero container">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="little-dot"></span> STUDENT LIVING · NEAR UC MERCED
+          </p>
+          <h1>Room to study.<br />Space to <em>belong.</em></h1>
+          <p class="lead">
+            Your own room, a home to share, and campus close by. Settle into
+            student life at Bellevue Ranch House.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="pricing.html"
+              >Find your room <span aria-hidden="true">↗</span></a
+            ><a class="text-link" href="photos.html#tour"
+              >Watch the video tour <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <p class="hero-price">
+            <span class="nowrap"><strong>$500</strong> regular</span>
+            <span class="divider">/</span>
+            <span class="nowrap"><strong>$750</strong> master</span>
+            <span class="price-unit">per month + utilities</span>
+          </p>
         </div>
+        <figure class="hero-photo">
+          <img
+            src="img/opt/bvr-hero-1280.webp"
+            srcset="img/opt/bvr-hero-640.webp 640w, img/opt/bvr-hero-1280.webp 1280w, img/opt/bvr-hero-1600.webp 1600w"
+            sizes="(max-width: 680px) 100vw, 50vw"
+            alt="The stone-front entrance and trees at Bellevue Ranch House"
+            width="1800"
+            height="1200"
+            fetchpriority="high"
+          />
+          <figcaption>
+            <span><span class="little-dot"></span> YOUR HOME BASE</span
+            ><strong>Bellevue Ranch, Merced</strong>
+          </figcaption>
+          <a
+            class="photo-link"
+            href="photos.html"
+            aria-label="See all house photos"
+            ><span aria-hidden="true">↗</span></a
+          >
+        </figure>
+      </section>
+      <div class="quick-facts container">
+        <div>
+          <span class="fact-number">01</span>
+          <p>
+            <strong>Close to campus</strong
+            ><span>In Bellevue Ranch, Merced</span>
+          </p>
+        </div>
+        <div>
+          <span class="fact-number">02</span>
+          <p>
+            <strong>A room of your own</strong
+            ><span>Shared spaces for everyday life</span>
+          </p>
+        </div>
+        <div>
+          <span class="fact-number">03</span>
+          <p>
+            <strong>Rent that makes sense</strong
+            ><span>Two clear monthly options</span>
+          </p>
+        </div>
+      </div>
+      <section class="container section" id="rooms">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A LITTLE SPACE OF YOUR OWN</p>
+            <h2>Two rooms. One easy choice.</h2>
+          </div>
+          <a href="pricing.html" class="text-link"
+            >Compare the details <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="room-grid">
+          <article class="room-card">
+            <div class="room-photo">
+              <img
+                src="img/opt/12_bedroom1and2_L2-1000.webp"
+                srcset="img/opt/12_bedroom1and2_L2-640.webp 640w, img/opt/12_bedroom1and2_L2-1000.webp 1000w"
+                sizes="(max-width: 680px) 100vw, 50vw"
+                alt="Regular bedroom at Bellevue Ranch House"
+                width="1000"
+                height="1500"
+                loading="lazy"
+                decoding="async"
+              /><span class="photo-label">YOUR OWN SPACE</span>
+            </div>
+            <div class="room-content">
+              <div class="room-heading">
+                <h3>Regular bedroom</h3>
+                <p class="price">$500<span>/mo</span></p>
+              </div>
+              <p class="room-description">
+                A private room. A student-friendly budget.
+              </p>
+              <ul class="room-features">
+                <li>Private bedroom</li>
+                <li>Shared bathroom</li>
+              </ul>
+              <div class="room-bottom">
+                <span>+ shared utilities</span
+                ><a href="apply.html?room=regular" class="text-link"
+                  >Choose this room <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="room-card">
+            <div class="room-photo">
+              <img
+                src="img/opt/7_MSbedroomL1-1280.webp"
+                srcset="img/opt/7_MSbedroomL1-640.webp 640w, img/opt/7_MSbedroomL1-1280.webp 1280w, img/opt/7_MSbedroomL1-1500.webp 1500w"
+                sizes="(max-width: 680px) 100vw, 50vw"
+                alt="Master bedroom at Bellevue Ranch House"
+                width="1500"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+              /><span class="photo-label">MORE ROOM FOR YOU</span>
+            </div>
+            <div class="room-content">
+              <div class="room-heading">
+                <h3>Master bedroom</h3>
+                <p class="price">$750<span>/mo</span></p>
+              </div>
+              <p class="room-description">
+                A little more space, with a bathroom of your own.
+              </p>
+              <ul class="room-features">
+                <li>Larger private bedroom</li>
+                <li>Private bathroom</li>
+              </ul>
+              <div class="room-bottom">
+                <span>+ shared utilities</span
+                ><a href="apply.html?room=master" class="text-link"
+                  >Choose this room <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="section-note">
+          Monthly rent is per room. Utilities and tenant-arranged internet are
+          separate. Contact us for current availability.
+        </p>
+      </section>
+      <section class="life-section">
+        <div class="container life-grid">
+          <figure class="life-photo">
+            <img
+              src="img/opt/3_kitchenfromlivingroom-1280.webp"
+              srcset="img/opt/3_kitchenfromlivingroom-640.webp 640w, img/opt/3_kitchenfromlivingroom-1280.webp 1280w, img/opt/3_kitchenfromlivingroom-1500.webp 1500w"
+              sizes="(max-width: 680px) 100vw, 50vw"
+              alt="Shared kitchen with a breakfast counter and built-in appliances"
+              width="1500"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>THE KITCHEN · BELLEVUE RANCH HOUSE</figcaption>
+          </figure>
+          <div class="life-copy">
+            <p class="eyebrow">MORE THAN YOUR BEDROOM</p>
+            <h2>For the everyday.<br />And the all-nighters.</h2>
+            <p>
+              Room to make dinner, catch up with housemates, and get back to
+              what you’re working toward.
+            </p>
+            <div class="feature-rows">
+              <div>
+                <span>01</span>
+                <p>
+                  <strong>Make yourself at home</strong>A shared kitchen, living
+                  areas, and backyard.
+                </p>
+              </div>
+              <div>
+                <span>02</span>
+                <p>
+                  <strong>Keep your routine simple</strong>In-home washer and
+                  dryer access.
+                </p>
+              </div>
+              <div>
+                <span>03</span>
+                <p>
+                  <strong>Find your focus</strong>Respectful shared living and
+                  quiet-hours expectations.
+                </p>
+              </div>
+            </div>
+            <a class="text-link" href="about.html"
+              >Get to know the house <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="container section" aria-labelledby="campus-title">
+        <div class="campus-strip">
+          <div>
+            <p class="eyebrow">GETTING TO CAMPUS</p>
+            <h2 id="campus-title">UC Merced is a FastCat ride away.</h2>
+            <a class="text-link light" href="about.html#campus"
+              >Plan your commute <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div>
+            <span class="stat">2<small>stops</small></span>
+            <h3>FastCat on M Street</h3>
+            <p>Cardella Rd. &amp; M St. and M St. &amp; Bellevue Rd.</p>
+          </div>
+          <div>
+            <span class="stat">11–26<small>min</small></span>
+            <h3>From Bellevue Rd.</h3>
+            <p>Scheduled weekday ride to the University Transit Center.</p>
+          </div>
+          <div>
+            <span class="stat">15–30<small>min</small></span>
+            <h3>From Cardella Rd.</h3>
+            <p>Walking and waiting time are extra. Check live times first.</p>
+          </div>
+        </div>
+      </section>
+      <section class="container section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">FROM “I’M INTERESTED” TO “I’M HOME”</p>
+            <h2>Your next steps, made clear.</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <article>
+            <span>01 /</span>
+            <h3>Choose your room</h3>
+            <p>
+              Compare the $500 regular and $750 master options, then share your
+              preference in the application.
+            </p>
+          </article>
+          <article>
+            <span>02 /</span>
+            <h3>Come take a look</h3>
+            <p>
+              We’ll follow up about availability and coordinate a tour around
+              current tenant schedules.
+            </p>
+          </article>
+          <article>
+            <span>03 /</span>
+            <h3>Make it official</h3>
+            <p>
+              Complete screening, review your lease and move-in costs, and plan
+              your next chapter.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="container section">
+        <div class="cta">
+          <div>
+            <p class="eyebrow">YOUR NEXT CHAPTER</p>
+            <h2>Find your place here.</h2>
+            <p>
+              Tell us what you’re looking for. We’ll help with the next step.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-lime" href="apply.html"
+              >Start your application <span aria-hidden="true">↗</span></a
+            ><a class="text-link light" href="contact.html"
+              >Have a question? Get in touch
+              <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <aside class="mobile-cta" data-mobile-cta aria-label="Apply">
+      <p><strong>Rooms from $500/mo</strong>Near UC Merced · plus utilities</p>
+      <a class="btn btn-lime" href="apply.html"
+        >Apply <span aria-hidden="true">↗</span></a
+      >
+    </aside>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Bellevue Ranch House home"
+            ><span class="brand-symbol" aria-hidden="true"
+              >b<span>r.</span></span
+            ><span class="brand-name"
+              >Bellevue Ranch<span>HOUSE · MERCED, CA</span></span
+            ></a
+          >
+          <p>
+            A place for your next chapter.<br />Student living near UC Merced.
+          </p>
+          <a class="footer-email" href="mailto:bellevueranchhouse@gmail.com"
+            >Let’s talk housing <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="footer-bottom">
+          <span
+            >© <span data-current-year>2026</span> Bellevue Ranch House</span
+          >
+          <nav aria-label="Footer navigation">
+            <a href="pricing.html">Rooms & pricing</a
+            ><a href="faqs.html">FAQs</a><a href="contact.html">Contact</a>
+          </nav>
+          <span>Independent off-campus housing</span>
+        </div>
+      </div>
     </footer>
-
-    <script src="js/site.js"></script>
-</body>
+  </body>
 </html>
