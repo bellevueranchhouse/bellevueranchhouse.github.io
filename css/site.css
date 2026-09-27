@@ -1,22 +1,26 @@
 :root {
-  --ink: #173b31;
-  --muted: #56635b;
-  --paper: #fafaf6;
+  /* Navy and gold inspired by UC Merced's colors, in the house's own shades
+     (not the university's exact values). */
+  --ink: #1b3358;
+  --ink-hover: #2a4a78;
+  --navy-deep: #132a4d;
+  --muted: #535f74;
+  --paper: #fbfaf6;
   --white: #fff;
-  --line: #dce1d7;
-  --lime: #deecac;
-  --soft: #edf0e6;
+  --line: #dde2ea;
+  --gold: #f2c14e;
+  --gold-hover: #f6d173;
+  --gold-soft: #f7ecd2;
+  --soft: #eef1f6;
+  --accent: #8a6206;
+  --focus: #2f6fb0;
   --serif: "DM Serif Display", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
   --width: 1240px;
-  --accent: #526b3b;
   --radius: 12px;
   --radius-sm: 8px;
-  --shadow: 0 1px 2px rgba(23, 59, 49, 0.05), 0 18px 40px -22px rgba(23, 59, 49, 0.35);
+  --shadow: 0 1px 2px rgba(27, 51, 88, 0.05), 0 18px 40px -22px rgba(27, 51, 88, 0.35);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-  --ucm-blue: #002856;
-  --ucm-gold: #daa900;
-  --ucm-gold-soft: #f6e9d7;
 }
 * {
   box-sizing: border-box;
@@ -92,14 +96,14 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #7a9d3c;
+  outline: 3px solid var(--focus);
   outline-offset: 5px;
 }
 a:hover {
-  color: #54763b;
+  color: #2f5f9c;
 }
 ::selection {
-  background: var(--lime);
+  background: var(--gold);
 }
 .container {
   width: min(calc(100% - 96px), var(--width));
@@ -124,7 +128,7 @@ a:hover {
   display: inline-block;
   width: 7px;
   height: 7px;
-  background: #678443;
+  background: #d9a520;
   border-radius: 50%;
   margin-right: 7px;
 }
@@ -149,9 +153,9 @@ a:hover {
 }
 .btn:hover {
   color: var(--white);
-  background: #2f5341;
+  background: var(--ink-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -12px rgba(23, 59, 49, 0.6);
+  box-shadow: 0 10px 24px -12px rgba(27, 51, 88, 0.6);
 }
 .btn span[aria-hidden] {
   font-size: 20px;
@@ -163,13 +167,13 @@ a:hover {
   gap: 24px;
   font-size: 14px;
 }
-.btn-lime {
-  background: var(--lime);
+.btn-gold {
+  background: var(--gold);
   color: var(--ink);
-  border-color: var(--lime);
+  border-color: var(--gold);
 }
-.btn-lime:hover {
-  background: #ebf5c6;
+.btn-gold:hover {
+  background: var(--gold-hover);
   color: var(--ink);
 }
 .btn-secondary {
@@ -209,7 +213,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(250, 250, 246, 0.96);
+  background: rgba(251, 250, 246, 0.96);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
   transition: box-shadow 0.25s, background 0.25s;
@@ -259,7 +263,7 @@ a:hover {
 }
 .site-menu > a:not(.btn) {
   font-size: 14px;
-  color: #435248;
+  color: #3d4a60;
   white-space: nowrap;
 }
 .site-menu > a[aria-current="page"]:not(.btn) {
@@ -309,7 +313,7 @@ a:hover {
 .hero-price .divider {
   display: inline-block;
   margin: 0 12px;
-  color: #9aa492;
+  color: #9aa6b8;
 }
 .price-unit {
   display: block;
@@ -333,7 +337,7 @@ a:hover {
   content: "";
   position: absolute;
   inset: 40% 0 0;
-  background: linear-gradient(transparent, rgba(6, 22, 10, 0.72));
+  background: linear-gradient(transparent, rgba(5, 14, 30, 0.72));
   pointer-events: none;
 }
 .hero-photo figcaption {
@@ -348,7 +352,7 @@ a:hover {
   letter-spacing: 0.15em;
 }
 .hero-photo figcaption .little-dot {
-  background: var(--lime);
+  background: var(--gold);
   width: 6px;
   height: 6px;
 }
@@ -395,7 +399,7 @@ a:hover {
 .fact-number {
   font-family: var(--serif);
   font-size: 30px;
-  color: #a5b095;
+  color: #9aa6b8;
 }
 .quick-facts p {
   font-size: 14px;
@@ -519,7 +523,7 @@ a:hover {
 }
 .room-features li:before {
   content: "✓";
-  color: #678443;
+  color: var(--accent);
   margin-right: 9px;
 }
 .room-bottom {
@@ -580,7 +584,7 @@ a:hover {
 .feature-rows > div {
   display: flex;
   gap: 22px;
-  border-top: 1px solid #d4dccc;
+  border-top: 1px solid var(--line);
   padding: 17px 0;
 }
 .feature-rows > div > span {
@@ -640,7 +644,7 @@ a:hover {
   isolation: isolate;
 }
 .cta .eyebrow {
-  color: var(--lime);
+  color: var(--gold);
   margin-bottom: 14px;
 }
 .cta h2 {
@@ -649,7 +653,7 @@ a:hover {
 .cta p:not(.eyebrow) {
   font-size: 15px;
   margin-top: 16px;
-  color: #cfdbd1;
+  color: #d3dcea;
 }
 .cta-actions {
   display: flex;
@@ -662,7 +666,7 @@ a:hover {
   color: white;
 }
 .light:hover {
-  color: var(--lime);
+  color: var(--gold);
 }
 .site-footer {
   border-top: 1px solid var(--line);
@@ -925,7 +929,7 @@ a:hover {
   top: 19px;
   font-size: 26px;
   font-weight: 400;
-  color: #798c67;
+  color: var(--accent);
   transition: transform 0.25s var(--ease);
 }
 .faq-item[open] summary:after {
@@ -1013,13 +1017,13 @@ a:hover {
   overflow: auto;
 }
 .lightbox::backdrop {
-  background: rgba(10, 25, 17, 0.88);
+  background: rgba(8, 18, 36, 0.88);
 }
 .lightbox-image {
   width: 100%;
   height: min(72dvh, 730px);
   object-fit: contain;
-  background: #101d17;
+  background: #0d1a2e;
 }
 .lightbox-bar {
   display: flex;
@@ -1157,7 +1161,7 @@ a:hover {
   width: 100%;
   min-height: 46px;
   padding: 11px 12px;
-  border: 1px solid #cdd5c7;
+  border: 1px solid #cfd6e0;
   border-radius: var(--radius-sm);
   background: var(--paper);
   color: var(--ink);
@@ -1221,7 +1225,7 @@ a:hover {
   font-size: 40px;
 }
 .contact-primary p {
-  color: #d0dbc9;
+  color: #d3dcea;
   font-size: 15px;
   margin: 20px 0 28px;
 }
@@ -1234,7 +1238,7 @@ a:hover {
   text-underline-offset: 6px;
 }
 .contact-primary .eyebrow {
-  color: var(--lime);
+  color: var(--gold);
   margin: 0 0 20px;
 }
 .contact-secondary {
@@ -1290,7 +1294,7 @@ a:hover {
   display: grid;
   place-items: center;
   font-size: 25px;
-  background: var(--lime);
+  background: var(--gold);
   border-radius: 50%;
   margin-bottom: 25px;
 }
@@ -1403,7 +1407,7 @@ button {
     background: var(--paper);
     border-bottom: 1px solid var(--line);
     padding: 20px 32px;
-    box-shadow: 0 24px 30px -18px rgba(23, 59, 49, 0.25);
+    box-shadow: 0 24px 30px -18px rgba(27, 51, 88, 0.25);
     align-items: stretch;
     visibility: hidden;
     opacity: 0;
@@ -2021,8 +2025,8 @@ p {
   text-wrap: pretty;
 }
 .site-header.is-scrolled {
-  background: rgba(250, 250, 246, 0.9);
-  box-shadow: 0 10px 30px -24px rgba(23, 59, 49, 0.5);
+  background: rgba(251, 250, 246, 0.9);
+  box-shadow: 0 10px 30px -24px rgba(27, 51, 88, 0.5);
 }
 @media (min-width: 901px) {
   .site-header.is-scrolled .nav-shell {
@@ -2060,7 +2064,7 @@ p {
   right: -140px;
   top: -260px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(222, 236, 172, 0.2), transparent 65%);
+  background: radial-gradient(circle, rgba(242, 193, 78, 0.18), transparent 65%);
   pointer-events: none;
 }
 .faq-item summary:hover,
@@ -2077,7 +2081,7 @@ p {
 .field select:focus,
 .field textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(95, 122, 69, 0.18);
+  box-shadow: 0 0 0 3px rgba(47, 111, 176, 0.2);
 }
 .field input:user-invalid,
 .field select:user-invalid,
@@ -2128,7 +2132,7 @@ p {
   grid-template-columns: 1.1fr repeat(3, 1fr);
   gap: 0;
   border-radius: var(--radius);
-  background: var(--ucm-blue);
+  background: var(--navy-deep);
   color: var(--white);
   overflow: hidden;
 }
@@ -2141,7 +2145,7 @@ p {
   background: rgba(255, 255, 255, 0.06);
 }
 .campus-strip .eyebrow {
-  color: var(--ucm-gold);
+  color: var(--gold);
   margin-bottom: 12px;
 }
 .campus-strip h2 {
@@ -2149,7 +2153,7 @@ p {
   margin-bottom: 18px;
 }
 .campus-strip .text-link:hover {
-  color: var(--ucm-gold);
+  color: var(--gold);
 }
 .stat {
   display: block;
@@ -2199,7 +2203,7 @@ p {
   width: 100%;
   aspect-ratio: 368 / 656;
   border-radius: 18px;
-  background: #101d17;
+  background: #0d1a2e;
   box-shadow: var(--shadow);
   object-fit: cover;
 }
@@ -2281,7 +2285,7 @@ p {
     background: var(--ink);
     color: var(--white);
     border-radius: 14px;
-    box-shadow: 0 16px 40px -12px rgba(6, 22, 10, 0.55);
+    box-shadow: 0 16px 40px -12px rgba(5, 14, 30, 0.55);
     transition:
       transform 0.3s var(--ease),
       opacity 0.3s;
@@ -2289,7 +2293,7 @@ p {
   .mobile-cta p {
     font-size: 13px;
     line-height: 1.35;
-    color: #cfdbd1;
+    color: #d3dcea;
   }
   .mobile-cta strong {
     display: block;
@@ -2442,17 +2446,17 @@ html:not(.js) .site-menu {
   gap: 8px;
   padding: 7px 14px 7px 10px;
   border-radius: 999px;
-  background: var(--ucm-gold-soft);
-  border: 1px solid #ecd6a8;
-  color: var(--ucm-blue);
+  background: var(--gold-soft);
+  border: 1px solid #ecd9a8;
+  color: var(--navy-deep);
 }
 .bobcat-pill .little-dot {
-  background: var(--ucm-gold);
-  box-shadow: 0 0 0 3px rgba(218, 169, 0, 0.25);
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(242, 193, 78, 0.35);
   margin: 0;
 }
 .campus-strip .stat {
-  color: var(--ucm-gold);
+  color: var(--gold);
 }
 .campus-strip .stat small {
   color: #c9d3e0;
@@ -2461,22 +2465,22 @@ html:not(.js) .site-menu {
   color: var(--white);
 }
 .commute-options article > span {
-  color: var(--ucm-blue);
+  color: var(--navy-deep);
 }
 .campus-section .eyebrow {
-  color: var(--ucm-blue);
+  color: var(--navy-deep);
 }
 .mobile-cta {
-  background: var(--ucm-blue);
+  background: var(--navy-deep);
 }
-.mobile-cta .btn-lime {
-  background: var(--ucm-gold);
-  border-color: var(--ucm-gold);
-  color: var(--ucm-blue);
+.mobile-cta .btn-gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy-deep);
 }
-.mobile-cta .btn-lime:hover {
-  background: #e8bd1f;
-  color: var(--ucm-blue);
+.mobile-cta .btn-gold:hover {
+  background: var(--gold-hover);
+  color: var(--navy-deep);
 }
 @media (max-width: 680px) {
   .campus-strip > * {
@@ -2491,4 +2495,26 @@ html:not(.js) .site-menu {
   .campus-strip > :not(:first-child) {
     border-top: 1px solid rgba(255, 255, 255, 0.14);
   }
+}
+.hero-copy h1 em.ucm {
+  color: var(--ink);
+  font-style: italic;
+  background: linear-gradient(transparent 70%, rgba(242, 193, 78, 0.55) 70%, rgba(242, 193, 78, 0.55) 92%, transparent 92%);
+  padding: 0 0.06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.campus-band {
+  padding-block: 12px 24px;
+}
+.campus-strip {
+  box-shadow: var(--shadow);
+}
+@media (max-width: 680px) {
+  .campus-band {
+    padding-block: 4px 8px;
+  }
+}
+.hero-photo figcaption {
+  right: 90px;
 }
