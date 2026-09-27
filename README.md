@@ -23,6 +23,8 @@ Each page has a canonical URL on `https://www.bellevueranchhouse.com/` plus Open
 
 Use the original property photos in `img/house/` and `img/bvr-hero.jpg` for rental details. The illustration in `img/student-essentials.jpg` is decorative; its generation prompt is in `output/imagegen/student-essentials.md`.
 
+Commute facts, the seven Fall 2026 CatTracks source schedules, and the September 26 image correction are documented in [site update notes](docs/SITE_UPDATES.md). The current campus artwork is `img/campus-connection.png`; its edit prompt is in [the image log](output/imagegen/campus-connection.md). Keep the approximately six-minute **drive** separate from bus timetable ranges. After replacing this artwork, run `npm run images` and update its cache version in `about.html`.
+
 ## Applications
 
 The existing form uses FormSubmit and sends to `bellevueranchhouse@gmail.com`, with the existing `apply-success.html` redirect. It uses native browser validation and does not store applicant details in browser storage. Live delivery depends on FormSubmit activation and service availability. Local checks must intercept submission requests; do not send fabricated applications to the landlord.

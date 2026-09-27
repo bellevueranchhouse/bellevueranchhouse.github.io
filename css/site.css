@@ -14,6 +14,9 @@
   --radius-sm: 8px;
   --shadow: 0 1px 2px rgba(23, 59, 49, 0.05), 0 18px 40px -22px rgba(23, 59, 49, 0.35);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ucm-blue: #002856;
+  --ucm-gold: #daa900;
+  --ucm-gold-soft: #f6e9d7;
 }
 * {
   box-sizing: border-box;
@@ -2124,22 +2127,21 @@ p {
   display: grid;
   grid-template-columns: 1.1fr repeat(3, 1fr);
   gap: 0;
-  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--white);
+  background: var(--ucm-blue);
+  color: var(--white);
   overflow: hidden;
 }
 .campus-strip > * {
   padding: 30px 28px;
-  border-left: 1px solid var(--line);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
 }
 .campus-strip > :first-child {
   border-left: 0;
-  background: var(--ink);
-  color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
 }
 .campus-strip .eyebrow {
-  color: var(--lime);
+  color: var(--ucm-gold);
   margin-bottom: 12px;
 }
 .campus-strip h2 {
@@ -2147,7 +2149,7 @@ p {
   margin-bottom: 18px;
 }
 .campus-strip .text-link:hover {
-  color: var(--lime);
+  color: var(--ucm-gold);
 }
 .stat {
   display: block;
@@ -2170,7 +2172,7 @@ p {
 }
 .campus-strip p {
   font-size: 14px;
-  color: var(--muted);
+  color: #c9d3e0;
 }
 
 /* Video tour (photos) */
@@ -2430,4 +2432,63 @@ html:not(.js) .site-menu {
 }
 .not-found-links {
   margin: 36px 0 40px;
+}
+
+/* UC Merced nods: Boomer Blue and Bobcat Gold, used only for campus cues.
+   Gold is only ever placed on navy or behind navy text (contrast). */
+.bobcat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 7px 10px;
+  border-radius: 999px;
+  background: var(--ucm-gold-soft);
+  border: 1px solid #ecd6a8;
+  color: var(--ucm-blue);
+}
+.bobcat-pill .little-dot {
+  background: var(--ucm-gold);
+  box-shadow: 0 0 0 3px rgba(218, 169, 0, 0.25);
+  margin: 0;
+}
+.campus-strip .stat {
+  color: var(--ucm-gold);
+}
+.campus-strip .stat small {
+  color: #c9d3e0;
+}
+.campus-strip h3 {
+  color: var(--white);
+}
+.commute-options article > span {
+  color: var(--ucm-blue);
+}
+.campus-section .eyebrow {
+  color: var(--ucm-blue);
+}
+.mobile-cta {
+  background: var(--ucm-blue);
+}
+.mobile-cta .btn-lime {
+  background: var(--ucm-gold);
+  border-color: var(--ucm-gold);
+  color: var(--ucm-blue);
+}
+.mobile-cta .btn-lime:hover {
+  background: #e8bd1f;
+  color: var(--ucm-blue);
+}
+@media (max-width: 680px) {
+  .campus-strip > * {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .campus-strip > :first-child {
+    border-top: 0;
+  }
+}
+@media (min-width: 681px) and (max-width: 1150px) {
+  .campus-strip > :not(:first-child) {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
 }
